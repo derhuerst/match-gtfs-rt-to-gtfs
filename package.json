@@ -1,0 +1,37 @@
+{
+	"private": true,
+	"name": "match-gtfs-rt-to-gtfs",
+	"description": "Match GTFS Realtime IDs to GTFS Static IDs.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"example.js"
+	],
+	"keywords": [
+		"gtfs-rt",
+		"gtfs-realtime",
+		"gtfs",
+		"id"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs",
+	"repository": "derhuerst/match-gtfs-rt-to-gtfs",
+	"bugs": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=12"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+		"eslint": "^7.3.0",
+		"tap-min": "^2.0.0",
+		"tape": "^5.0.0"
+	},
+	"scripts": {
+		"test": "env NODE_ENV=dev node test.js | tap-min",
+		"lint": "eslint .",
+		"prepublishOnly": "npm test && npm run lint"
+	}
+}
