@@ -6,6 +6,7 @@
 	"main": "index.js",
 	"files": [
 		"index.js",
+		"lib",
 		"example.js"
 	],
 	"keywords": [
@@ -23,6 +24,11 @@
 		"node": ">=12"
 	},
 	"dependencies": {
+		"@derhuerst/stable-public-transport-ids": "^1.2.0",
+		"pg": "^8.3.3",
+		"pg-format": "^1.0.4",
+		"pg-query-stream": "^3.2.3",
+		"tokenize-vbb-station-name": "^1.1.0"
 	},
 	"devDependencies": {
 		"eslint": "^7.3.0",
