@@ -3,6 +3,7 @@
 const {Client} = require('pg')
 const QueryStream = require('pg-query-stream')
 const stops = require('./lib/prepare-stable-ids/stops')
+const routes = require('./lib/prepare-stable-ids/routes')
 
 ;(async () => {
 	const db = new Client()
@@ -19,6 +20,9 @@ const stops = require('./lib/prepare-stable-ids/stops')
 
 	console.error('stops')
 	await convert(stops.query, stops.onRow)
+	console.error('routes')
+	await convert(routes.query, routes.onRow)
+
 	await db.end()
 })()
 .catch((err) => {
