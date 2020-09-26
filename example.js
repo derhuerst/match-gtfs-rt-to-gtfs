@@ -6,6 +6,12 @@ const dep = {
 	tripId: 'vbb-rb13-abcdefg',
 	direction: 'Parchim Bhf',
 	fahrtNr: '68998',
+	line: {
+		id: '1234567',
+		name: 'RB 13',
+		mode: 'train',
+		product: 'regional',
+	},
 
 	plannedWhen: '2020-09-21T22:21:48+02:00',
 	plannedPlatform: null,
