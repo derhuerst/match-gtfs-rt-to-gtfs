@@ -26,6 +26,7 @@
 	"dependencies": {
 		"@derhuerst/stable-public-transport-ids": "^1.2.0",
 		"gtfs-utils": "^3.0.0",
+		"luxon": "^1.25.0",
 		"pg": "^8.3.3",
 		"pg-format": "^1.0.4",
 		"pg-query-stream": "^3.2.3",
