@@ -30,6 +30,10 @@ const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(require.resolve('./lib/arrivals_d
 	console.error('routes')
 	await convert(routes)
 
+	process.stdout.write(`
+		CREATE INDEX ON trips (route_id, trip_id);
+	`)
+
 	process.stdout.write(ARRS_DEPS_WITH_STABLE_IDS)
 
 	await db.end()

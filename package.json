@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"name": "match-gtfs-rt-to-gtfs",
-	"description": "Match GTFS Realtime IDs to GTFS Static IDs.",
+	"description": "Match GTFS Realtime data with GTFS Static data, even if they don't share an ID.",
 	"version": "1.0.0",
 	"main": "index.js",
 	"files": [
@@ -13,7 +13,9 @@
 		"gtfs-rt",
 		"gtfs-realtime",
 		"gtfs",
-		"id"
+		"id",
+		"public transport",
+		"transit"
 	],
 	"author": "Jannis R <mail@jannisr.de>",
 	"homepage": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs",
@@ -35,6 +37,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^7.3.0",
+		"gtfs-via-postgres": "github:derhuerst/gtfs-via-postgres",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
