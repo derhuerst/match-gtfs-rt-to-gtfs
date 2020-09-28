@@ -4,7 +4,11 @@
 	"description": "Match GTFS Realtime data with GTFS Static data, even if they don't share an ID.",
 	"version": "1.0.0",
 	"main": "index.js",
+	"bin": {
+		"build-gtfs-match-index": "./build-index.js"
+	},
 	"files": [
+		"build-index.js",
 		"index.js",
 		"lib",
 		"example.js"
@@ -30,6 +34,7 @@
 		"find-hafas-data-in-another-hafas": "^4.1.1",
 		"gtfs-utils": "^3.0.0",
 		"luxon": "^1.25.0",
+		"mri": "^1.1.6",
 		"pg": "^8.3.3",
 		"pg-format": "^1.0.4",
 		"pg-query-stream": "^3.2.3",
