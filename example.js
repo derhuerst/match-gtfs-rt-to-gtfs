@@ -1,16 +1,16 @@
 'use strict'
 
-const matchArrDep = require('./lib/match-arrival-departure')
+const {matchDeparture} = require('./lib/match-arrival-departure')
 
 const dep = {
-	tripId: 'vbb-rb13-abcdefg',
+	tripId: 'vbb-rb13-abcdefg', // this is made up
 	direction: 'Parchim Bhf',
-	fahrtNr: '68998',
 	line: {
-		id: '1234567',
+		id: '1234567', // this is made up
 		name: 'RB 13',
 		mode: 'train',
 		product: 'regional',
+		fahrtNr: '68998',
 	},
 
 	plannedWhen: '2020-09-21T22:21:48+02:00',
@@ -28,7 +28,7 @@ const dep = {
 }
 
 ;(async () => {
-	console.log(await matchArrDep('departure', dep))
+	console.log(await matchDeparture(dep))
 })()
 .catch((err) => {
 	console.error(err)
