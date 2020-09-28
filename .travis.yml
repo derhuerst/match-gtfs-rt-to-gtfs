@@ -4,9 +4,14 @@ node_js:
   - node
   - 'lts/*'
   - '10'
+addons:
+  apt:
+    packages:
+    - redis-server
 script:
-  - 'npm test'
   - 'npm run lint'
+  - (redis-server & )
+  - 'npm test'
 cache: npm
 notifications:
   email:

@@ -1,6 +1,6 @@
 'use strict'
 
-const {matchDeparture} = require('./lib/match-arrival-departure')
+const {matchDeparture} = require('.')
 
 const dep = {
 	tripId: 'vbb-rb13-abcdefg', // this is made up
