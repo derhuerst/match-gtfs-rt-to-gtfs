@@ -26,11 +26,19 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
-// const stops = require('./lib/prepare-stable-ids/stops')
+const readCsv = require('gtfs-utils/read-csv')
+const prepareStops = require('./lib/prepare-stable-ids/stops')
 // const routes = require('./lib/prepare-stable-ids/routes')
 
+const pPipeline = promisify(pipeline)
+
+// todo: customizable gtfs dir
+const readFile = (file) => {
+	return readCsv(require.resolve('sample-gtfs-feed/gtfs/' + file + '.txt'))
+}
+
 ;(async () => {
-	// todo
+	await prepareStops(readFile)
 })()
 .catch((err) => {
 	console.error(err)

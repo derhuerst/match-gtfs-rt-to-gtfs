@@ -32,7 +32,6 @@
 	"dependencies": {
 		"@derhuerst/stable-public-transport-ids": "^1.2.0",
 		"find-hafas-data-in-another-hafas": "^4.1.1",
-		"gtfs-utils": "^3.0.0",
 		"ioredis": "^4.17.3",
 		"luxon": "^1.25.0",
 		"mri": "^1.1.6",
@@ -41,6 +40,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^7.3.0",
+		"gtfs-utils": "^3.0.0",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
