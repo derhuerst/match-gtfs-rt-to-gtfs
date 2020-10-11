@@ -36,15 +36,11 @@
 		"ioredis": "^4.17.3",
 		"luxon": "^1.25.0",
 		"mri": "^1.1.6",
-		"pg": "^8.3.3",
-		"pg-format": "^1.0.4",
-		"pg-query-stream": "^3.2.3",
 		"slugg": "^1.2.1",
 		"tokenize-vbb-station-name": "^1.1.0"
 	},
 	"devDependencies": {
 		"eslint": "^7.3.0",
-		"gtfs-via-postgres": "github:derhuerst/gtfs-via-postgres",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
