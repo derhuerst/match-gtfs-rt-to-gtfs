@@ -28,9 +28,8 @@ if (argv.version || argv.v) {
 
 const readCsv = require('gtfs-utils/read-csv')
 const prepareStops = require('./lib/prepare-stable-ids/stops')
-// const routes = require('./lib/prepare-stable-ids/routes')
-
-const pPipeline = promisify(pipeline)
+const prepareRoutes = require('./lib/prepare-stable-ids/routes')
+const redis = require('./lib/redis')
 
 // todo: customizable gtfs dir
 const readFile = (file) => {
@@ -38,7 +37,12 @@ const readFile = (file) => {
 }
 
 ;(async () => {
+	console.error('stops')
 	await prepareStops(readFile)
+	console.error('routes')
+	await prepareRoutes(readFile)
+
+	redis.quit()
 })()
 .catch((err) => {
 	console.error(err)
