@@ -6,6 +6,7 @@ const {
 	matchArrival,
 	matchDeparture,
 } = require('./lib/match-arrival-departure')
+const matchTrip = require('./lib/match-trip')
 
 const TTL = 10 * 60 * 1000 // 10m
 const NONE = Symbol('no result')
@@ -41,8 +42,18 @@ const cachedMatchArrDep = async (type, matchArrDep, _) => {
 	return match
 }
 
+const cachedMatchTrip = async (_) => {
+	const fromCache = await getFromCache(_.id)
+	if (fromCache !== NONE) return fromCache
+
+	const match = await matchTrip(_)
+	await addToCache(_.id, match)
+	return match
+}
+
 module.exports = {
 	matchStop: cachedMatchStop,
 	matchArrival: cachedMatchArrDep.bind(null, 'arrival', matchArrival),
 	matchDeparture: cachedMatchArrDep.bind(null, 'departure', matchDeparture),
+	matchTrip: cachedMatchTrip,
 }
