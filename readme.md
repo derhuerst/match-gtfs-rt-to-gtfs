@@ -37,7 +37,7 @@ gtfs-to-sql path/to/gtfs/*.txt | psql -b
 Now, we'll use this repo to import additional data needed for matching:
 
 ```shell
-node index.js | psql -b
+./build-index.js | psql -b
 ```
 
 ### using the database
@@ -57,11 +57,11 @@ WHERE (
 	OR station_stable_ids && ARRAY['station-id1', 'station-id2']
 )
 AND route_stable_ids && ARRAY['route-id1', 'route-id2']
-AND t_departure > '2020-09-21T22:20:48+02:00'
-AND t_departure < '2020-09-21T22:22:48+02:00'
+AND t_departure > '2020-10-16T22:20:48+02:00'
+AND t_departure < '2020-10-16T22:22:48+02:00'
 ```
 
-Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-04 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-04) is 320MB as CSV files, ~1.5GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
+Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) is 356MB as CSV files, ~1.1GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
 
 
 ## Contributing
