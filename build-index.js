@@ -33,7 +33,8 @@ const redis = require('./lib/redis')
 
 // todo: customizable gtfs dir
 const readFile = (file) => {
-	return readCsv(require.resolve('sample-gtfs-feed/gtfs/' + file + '.txt'))
+	// return readCsv(require.resolve('sample-gtfs-feed/gtfs/' + file + '.txt'))
+	return readCsv('/Users/j/web/vbb-gtfs.jannisr.de/2020-09-25/' + file + '.csv')
 }
 
 ;(async () => {
