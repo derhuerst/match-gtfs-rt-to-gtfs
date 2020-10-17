@@ -1,7 +1,7 @@
 CREATE VIEW arrivals_departures_with_stable_ids AS
 SELECT
 	trips.route_id,
-	routes_with_stable_ids.stable_ids as route_stable_ids,
+	routes_stable.stable_id AS route_stable_id,
 	routes.route_short_name,
 	routes.route_type,
 	trips.trip_id,
@@ -9,30 +9,20 @@ SELECT
 	trips.trip_short_name,
 	service_days.date,
 	stop_times.stop_sequence,
-	make_timestamptz(
-		date_part('year'::text, service_days.date)::integer,
-		date_part('month'::text, service_days.date)::integer,
-		date_part('day'::text, service_days.date)::integer,
-		12, 0, 0::double precision,
-		'Europe/Berlin'::text
-	) - '12:00:00'::interval + stop_times.arrival_time AS t_arrival,
-	make_timestamptz(
-		date_part('year'::text, service_days.date)::integer,
-		date_part('month'::text, service_days.date)::integer,
-		date_part('day'::text, service_days.date)::integer,
-		12, 0, 0::double precision,
-		'Europe/Berlin'::text
-	) - '12:00:00'::interval + stop_times.departure_time AS t_departure,
+	service_days.t_base + stop_times.arrival_time AS t_arrival,
+	service_days.t_base + stop_times.departure_time AS t_departure,
 	stop_times.stop_id,
-	stops.stop_stable_ids,
+	stops_stable.stable_id as stop_stable_id,
 	stops.stop_name,
-	stops.station_id,
-	stops.station_stable_ids,
-	stops.station_name
+	stations.stop_id as station_id,
+	stations_stable.stable_id as station_stable_id,
+	stations.stop_name as station_name
 FROM stop_times
-JOIN stops_with_stations_and_stable_ids stops ON stop_times.stop_id = stops.stop_id
-JOIN trips ON stop_times.trip_id = trips.trip_id
-JOIN routes ON trips.route_id = routes.route_id
-JOIN routes_with_stable_ids ON routes.route_id = routes_with_stable_ids.route_id
-JOIN service_days ON trips.service_id = service_days.service_id
-ORDER BY trips.route_id, stop_times.trip_id, service_days.date, stop_times.stop_sequence
+LEFT JOIN stops ON stop_times.stop_id = stops.stop_id
+LEFT JOIN stops stations ON stops.parent_station = stations.stop_id
+LEFT JOIN stops_stable_ids stops_stable ON stop_times.stop_id = stops_stable.stop_id
+LEFT JOIN stops_stable_ids stations_stable ON stations.stop_id = stations_stable.stop_id
+LEFT JOIN trips ON stop_times.trip_id = trips.trip_id
+LEFT JOIN routes ON trips.route_id = routes.route_id
+LEFT JOIN routes_stable_ids routes_stable ON routes.route_id = routes_stable.route_id
+LEFT JOIN service_days service_days ON trips.service_id = service_days.service_id
