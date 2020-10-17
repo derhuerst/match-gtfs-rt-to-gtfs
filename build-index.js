@@ -33,6 +33,7 @@ const stops = require('./lib/prepare-stable-ids/stops')
 const routes = require('./lib/prepare-stable-ids/routes')
 
 const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(require.resolve('./lib/arrivals_departures_with_stable_ids.sql'))
+const FIND_ARR_DEP = readFileSync(require.resolve('./lib/find_arr_dep.sql'))
 
 ;(async () => {
 	const db = new Client()
@@ -61,6 +62,7 @@ const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(require.resolve('./lib/arrivals_d
 	`)
 
 	process.stdout.write(ARRS_DEPS_WITH_STABLE_IDS)
+	process.stdout.write(FIND_ARR_DEP)
 
 	await db.end()
 })()
