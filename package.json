@@ -47,12 +47,15 @@
 	"devDependencies": {
 		"eslint": "^7.3.0",
 		"gtfs-via-postgres": "github:derhuerst/gtfs-via-postgres",
+		"ndjson": "^2.0.0",
+		"parallel-stream": "^1.1.2",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
 	"scripts": {
 		"test": "env NODE_ENV=dev node test.js | tap-min",
 		"lint": "eslint .",
+		"benchmark": "cat benchmark/trips.ndjson.gz | gunzip | node benchmark/index.js",
 		"prepublishOnly": "npm test && npm run lint"
 	}
 }
