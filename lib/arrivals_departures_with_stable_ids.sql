@@ -22,4 +22,4 @@ LEFT JOIN stops_with_stations_and_stable_ids stops ON stop_times.stop_id = stops
 LEFT JOIN trips ON stop_times.trip_id = trips.trip_id
 LEFT JOIN routes ON trips.route_id = routes.route_id
 LEFT JOIN routes_stable_ids routes_stable ON routes.route_id = routes_stable.route_id
-LEFT JOIN service_days service_days ON trips.service_id = service_days.service_id
+LEFT JOIN service_days service_days ON trips.service_id = service_days.service_id;

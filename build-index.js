@@ -14,9 +14,9 @@ const argv = mri(process.argv.slice(2), {
 if (argv.help || argv.h) {
 	process.stdout.write(`
 Usage:
-    build-index
+    build-gtfs-match-index
 Examples:
-    build-index
+    build-gtfs-match-index
 \n`)
 	process.exit(0)
 }

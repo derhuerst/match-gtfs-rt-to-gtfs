@@ -46,7 +46,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^7.3.0",
-		"gtfs-via-postgres": "github:derhuerst/gtfs-via-postgres",
+		"gtfs-via-postgres": "^2.2.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
 		"tap-min": "^2.0.0",
