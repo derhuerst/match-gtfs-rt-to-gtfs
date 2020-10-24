@@ -17,7 +17,7 @@ const processTrip = (trip, _, cb) => {
 	.then((trip) => {
 		const t = Date.now() - t0
 		times.push(t)
-		const isMatched = !!(trip.ids && trip.ids['vbb-gtfs'])
+		const isMatched = !!(trip.ids && trip.ids.gtfs)
 		;(isMatched ? matchedTimes : unmatchedTimes).push(t)
 
 		// console.error(isMatched ? 'matched' : 'not matched', 'in', t, 'ms')
