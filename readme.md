@@ -66,6 +66,6 @@ Because PostgreSQL is very smart at optimising a query, we don't need to store a
 
 ## Contributing
 
-*Note:* This repos blends two families of techinical terms – GTFS-related ones and [FPTF](https://public-transport.github.io/friendly-public-transport-format/)-/[`vbb-hafas`](https://github.com/public-transport/vbb-hafas)-related ones –, which makes the code somewhat confusing.
+*Note:* This repos blends two families of techinical terms – GTFS-related ones and [FPTF](https://public-transport.github.io/friendly-public-transport-format/)-/[`hvv-hafas`](https://github.com/public-transport/hvv-hafas)-related ones –, which makes the code somewhat confusing.
 
 If you have a question or need support using `match-gtfs-rt-to-gtfs`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, use [the issues page](https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues).
