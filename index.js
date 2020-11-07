@@ -6,12 +6,12 @@ const {
 	createMatchDeparture,
 } = require('./lib/match-arrival-departure')
 const createMatchTrip = require('./lib/match-trip')
-const matchMovement = require('./lib/match-movement')
+const createMatchMovement = require('./lib/match-movement')
 
 module.exports = {
 	createMatchStop,
 	createMatchArrival,
 	createMatchDeparture,
 	createMatchTrip,
-	matchMovement,
+	createMatchMovement,
 }

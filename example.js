@@ -6,7 +6,7 @@ const slugg = require('slugg')
 const createMatchStop = require('./lib/match-stop')
 const {createMatchDeparture} = require('./lib/match-arrival-departure')
 const createMatchTrip = require('./lib/match-trip')
-const matchMovement = require('./lib/match-movement')
+const createMatchMovement = require('./lib/match-movement')
 
 const normalizeStopName = (name) => {
 	return tokenize(name, {meta: 'remove'}).join('-')
@@ -32,6 +32,7 @@ const gtfsInfo = {
 const matchStop = createMatchStop(gtfsRtInfo, gtfsInfo)
 const matchDeparture = createMatchDeparture(gtfsRtInfo, gtfsInfo)
 const matchTrip = createMatchTrip(gtfsRtInfo, gtfsInfo)
+const matchMovement = createMatchMovement(gtfsRtInfo, gtfsInfo)
 
 const dep = {
 	tripId: '1|27986|21|80|31102020',
