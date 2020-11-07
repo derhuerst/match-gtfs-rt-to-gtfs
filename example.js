@@ -5,7 +5,7 @@ const tokenize = require('tokenize-vbb-station-name')
 const slugg = require('slugg')
 const createMatchStop = require('./lib/match-stop')
 const {createMatchDeparture} = require('./lib/match-arrival-departure')
-const matchTrip = require('./lib/match-trip')
+const createMatchTrip = require('./lib/match-trip')
 const matchMovement = require('./lib/match-movement')
 
 const normalizeStopName = (name) => {
@@ -31,6 +31,7 @@ const gtfsInfo = {
 }
 const matchStop = createMatchStop(gtfsRtInfo, gtfsInfo)
 const matchDeparture = createMatchDeparture(gtfsRtInfo, gtfsInfo)
+const matchTrip = createMatchTrip(gtfsRtInfo, gtfsInfo)
 
 const dep = {
 	tripId: '1|27986|21|80|31102020',
