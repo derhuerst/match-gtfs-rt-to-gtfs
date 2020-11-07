@@ -1,6 +1,6 @@
 'use strict'
 
-const matchStop = require('./lib/match-stop')
+const createMatchStop = require('./lib/match-stop')
 const {
 	matchArrival,
 	matchDeparture,
@@ -9,7 +9,7 @@ const matchTrip = require('./lib/match-trip')
 const matchMovement = require('./lib/match-movement')
 
 module.exports = {
-	matchStop,
+	createMatchStop,
 	matchArrival,
 	matchDeparture,
 	matchTrip,

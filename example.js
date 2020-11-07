@@ -1,9 +1,35 @@
 'use strict'
 
-const matchStop = require('./lib/match-stop')
+// todo: adapt this to HVV
+const tokenize = require('tokenize-vbb-station-name')
+const slugg = require('slugg')
+const createMatchStop = require('./lib/match-stop')
 const {matchDeparture} = require('.')
 const matchTrip = require('./lib/match-trip')
 const matchMovement = require('./lib/match-movement')
+
+const normalizeStopName = (name) => {
+	return tokenize(name, {meta: 'remove'}).join('-')
+}
+
+// we match hafas-client here
+// https://github.com/public-transport/hafas-client/blob/8ed218f4d62a0c220d453b1b1ffa7ce232f1bb83/parse/line.js#L13
+// todo: check that this actually works with HVV
+const normalizeLineName = (name) => {
+	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
+}
+
+const gtfsRtInfo = {
+	endpointName: 'hvv-hafas',
+	normalizeStopName,
+	normalizeLineName,
+}
+const gtfsInfo = {
+	endpointName: 'hvv', // todo: rename to dataSrcName?
+	normalizeStopName,
+	normalizeLineName,
+}
+const matchStop = createMatchStop(gtfsRtInfo, gtfsInfo)
 
 const dep = {
 	tripId: '1|27986|21|80|31102020',
