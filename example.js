@@ -3,6 +3,7 @@
 const matchStop = require('./lib/match-stop')
 const {matchDeparture} = require('.')
 const matchTrip = require('./lib/match-trip')
+const matchMovement = require('./lib/match-movement')
 
 const dep = {
 	tripId: '1|27986|21|80|31102020',
@@ -274,10 +275,57 @@ const trip = {
 	],
 }
 
+const movement = {
+	location: {latitude: 1.23, longitude: 2.34},
+
+	tripId: '1|27986|21|80|31102020',
+	direction: 'Schlump - Barmbek',
+	line: {
+		type: 'line',
+		id: 'hha-u-u3',
+		fahrtNr: '93778',
+		name: 'U3',
+		public: true,
+		adminCode: 'HHA-U_',
+		mode: 'train',
+		product: 'subway',
+		operator: {
+			type: 'operator',
+			id: 'hochbahn-u-bahn',
+			name: 'HOCHBAHN - U-Bahn',
+		},
+	},
+
+	nextStopovers: [{
+		stop: {
+			type: 'stop',
+			id: '16269',
+			name: 'Lübecker Straße',
+			location: {latitude: 53.560095, longitude: 10.028788},
+			station: {
+				type: 'station',
+				id: '82',
+				name: 'Lübecker Straße',
+				location: {latitude: 53.560095, longitude: 10.028788},
+			},
+		},
+
+		arrival: null, plannedArrival: null, arrivalDelay: null,
+		arrivalPlatform: null, plannedArrivalPlatform: null,
+
+		departure: '2020-10-31T13:49:00+01:00',
+		plannedDeparture: '2020-10-31T13:49:00+01:00',
+		departureDelay: 0,
+		departurePlatform: '2',
+		plannedDeparturePlatform: '2',
+	}],
+}
+
 ;(async () => {
 	console.log(await matchStop(dep.stop))
 	console.log(await matchDeparture(dep))
 	console.log(await matchTrip(trip))
+	console.log(await matchMovement(movement))
 })()
 .catch((err) => {
 	console.error(err)
