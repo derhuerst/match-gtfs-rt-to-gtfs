@@ -63,9 +63,125 @@ AND t_departure < '2020-10-16T22:22:48+02:00'
 
 Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) is 356MB as CSV files, ~1.1GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
 
+### matching data
+
+`match-gtfs-rt-to-gtf` does its job using fuzzy matching: As an example, it **identifies two departure data points from GTFS-RT & GTFS – at the same time, at the same stop/station and with the same route/line name – as equivalent**. For that to work, we need to tell it how to "normalize" stop/station & route/line names. As an example, we're going to do this for [VBB](https://github.com/public-transport/hafas-client/tree/5/p/vbb):
+
+```js
+const tokenize = require('tokenize-vbb-station-name')
+const slugg = require('slugg')
+
+const normalizeStopName = (name) => {
+	return tokenize(name, {meta: 'remove'}).join('-')
+}
+const normalizeLineName = (name) => {
+	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
+}
+
+// how to handle data from HAFAS/GTFS-RT:
+const gtfsRtInfo = {
+	endpointName: 'vbb-hafas',
+	normalizeStopName,
+	normalizeLineName,
+}
+// how to handle data from GTFS:
+const gtfsInfo = {
+	endpointName: 'vbb-gtfs',
+	normalizeStopName,
+	normalizeLineName,
+}
+```
+
+Now, let's match a departure against GTFS:
+
+```js
+const createMatch = require('match-gtfs-rt-to-gtfs')
+
+const gtfsRtDep = {
+	tripId: '1|12308|1|86|7112020',
+	direction: 'Grunewald, Roseneck',
+	line: {
+		type: 'line',
+		id: 'm29',
+		fahrtNr: '22569',
+		name: 'M29',
+		public: true,
+		adminCode: 'BVB',
+		mode: 'bus',
+		product: 'bus',
+		operator: {
+			type: 'operator',
+			id: 'berliner-verkehrsbetriebe',
+			name: 'Berliner Verkehrsbetriebe'
+		},
+	},
+
+	stop: {
+		type: 'stop',
+		id: '900000013101',
+		name: 'U Moritzplatz',
+		location: {latitude: 52.503737, longitude: 13.410944},
+	},
+
+	when: '2020-11-07T14:55:00+01:00',
+	plannedWhen: '2020-11-07T14:54:00+01:00',
+	delay: 60,
+	platform: null,
+	plannedPlatform: null,
+}
+
+const {matchDeparture} = createMatch(gtfsRtInfo, gtfsInfo)
+console.log(await matchDeparture(gtfsRtDep))
+```
+
+```js
+{
+	tripId: '145341691',
+	tripIds: {
+		'vbb-hafas': '1|12308|1|86|7112020',
+		'vbb-gtfs': '145341691',
+	},
+	routeId: '17449_700',
+	direction: 'Grunewald, Roseneck',
+	line: {
+		type: 'line',
+		id: null,
+		fahrtNr: '22569',
+		fahrtNrs: {'vbb-hafas': '22569'},
+		name: 'M29',
+		public: true,
+		adminCode: 'BVB',
+		mode: 'bus',
+		product: 'bus',
+		operator: {
+			type: 'operator',
+			id: 'berliner-verkehrsbetriebe',
+			name: 'Berliner Verkehrsbetriebe'
+		},
+	},
+
+	stop: {
+		type: 'stop',
+		id: '070101002285',
+		ids: {
+			'vbb-hafas': '900000013101',
+			'vbb-gtfs': '070101002285',
+		},
+		name: 'U Moritzplatz',
+		location: {latitude: 52.503737, longitude: 13.410944},
+	},
+
+	when: '2020-11-07T14:55:00+01:00',
+	plannedWhen: '2020-11-07T14:54:00+01:00',
+	delay: 60,
+	platform: null,
+	plannedPlatform: null,
+}
+```
+
 
 ## Contributing
 
-*Note:* This repos blends two families of techinical terms – GTFS-related ones and [FPTF](https://public-transport.github.io/friendly-public-transport-format/)-/[`hvv-hafas`](https://github.com/public-transport/hvv-hafas)-related ones –, which makes the code somewhat confusing.
+*Note:* This repos blends two families of techinical terms – GTFS-related ones and [FPTF](https://public-transport.github.io/friendly-public-transport-format/)-/[`hafas-client`](https://github.com/public-transport/hafas-client)-related ones –, which makes the code somewhat confusing.
 
 If you have a question or need support using `match-gtfs-rt-to-gtfs`, please double-check your code and setup first. If you think you have found a bug or want to propose a feature, use [the issues page](https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues).
