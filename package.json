@@ -1,8 +1,7 @@
 {
-	"private": true,
 	"name": "match-gtfs-rt-to-gtfs",
 	"description": "Match GTFS Realtime data with GTFS Static data, even if they don't share an ID.",
-	"version": "2.1.1",
+	"version": "3.0.0",
 	"main": "index.js",
 	"bin": {
 		"build-gtfs-match-index": "./build-index.js"
