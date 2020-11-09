@@ -4,13 +4,15 @@ node_js:
   - node
   - 'lts/*'
   - '10'
-addons:
-  apt:
-    packages:
-    - redis-server
+services:
+  - postgresql
+  - redis-server
+before_script:
+  - psql -U postgres -d postgres -c 'create database test'
+env:
+  - PGDATABASE=test
 script:
   - 'npm run lint'
-  - (redis-server & )
   - 'npm test'
 cache: npm
 notifications:
