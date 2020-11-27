@@ -10,7 +10,7 @@
 		"build-index.js",
 		"index.js",
 		"lib",
-		"example.js"
+		"example"
 	],
 	"keywords": [
 		"gtfs-rt",

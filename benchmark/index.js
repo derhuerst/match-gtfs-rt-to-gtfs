@@ -1,11 +1,27 @@
 'use strict'
 
+const {
+	normalizeStopName,
+	normalizeLineName,
+} = require('../example/util')
 const {pipeline} = require('stream')
 const {writable: parallelWritable} = require('parallel-stream')
 const {parse} = require('ndjson')
-const matchTrip = require('../lib/match-trip')
+const createMatchTrip = require('../lib/match-trip')
 const db = require('../lib/db')
 const redis = require('../lib/redis')
+
+const gtfsRtInfo = {
+	endpointName: 'hvv-hafas',
+	normalizeStopName,
+	normalizeLineName,
+}
+const gtfsInfo = {
+	endpointName: 'hvv',
+	normalizeStopName,
+	normalizeLineName,
+}
+const matchTrip = createMatchTrip(gtfsRtInfo, gtfsInfo)
 
 const times = []
 const matchedTimes = []
