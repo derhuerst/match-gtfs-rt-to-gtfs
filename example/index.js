@@ -1,24 +1,12 @@
 'use strict'
 
-const {
-	normalizeStopName,
-	normalizeLineName,
-} = require('./util')
+const gtfsRtInfo = require('./gtfs-rt-info')
+const gtfsInfo = require('./gtfs-info')
 const createMatchStop = require('../lib/match-stop')
 const {createMatchDeparture} = require('../lib/match-arrival-departure')
 const createMatchTrip = require('../lib/match-trip')
 const createMatchMovement = require('../lib/match-movement')
 
-const gtfsRtInfo = {
-	endpointName: 'hvv-hafas',
-	normalizeStopName,
-	normalizeLineName,
-}
-const gtfsInfo = {
-	endpointName: 'hvv', // todo: rename to dataSrcName?
-	normalizeStopName,
-	normalizeLineName,
-}
 const matchStop = createMatchStop(gtfsRtInfo, gtfsInfo)
 const matchDeparture = createMatchDeparture(gtfsRtInfo, gtfsInfo)
 const matchTrip = createMatchTrip(gtfsRtInfo, gtfsInfo)
