@@ -34,34 +34,50 @@ Let's use `gtfs-to-sql` CLI from the [`gtfs-via-postgres`](https://github.com/de
 gtfs-to-sql path/to/gtfs/*.txt | psql -b
 ```
 
-Now, we'll use this repo to import additional data needed for matching:
+To some extent, `match-gtfs-rt-to-gtf` fuzzily matches stop/station & route/line names (more on that below). For that to work, we need to tell it how to "normalize" these names. As an example, we're going to do this for the [VBB](https://en.wikipedia.org/wiki/Verkehrsverbund_Berlin-Brandenburg) data:
+
+```js
+// normalize.js
+const tokenize = require('tokenize-vbb-station-name')
+const slugg = require('slugg')
+
+const normalizeStopName = (name) => {
+	return tokenize(name, {meta: 'remove'}).join('-')
+}
+const normalizeLineName = (name) => {
+	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
+}
+
+module.exports = {normalizeStopName, normalizeLineName}
+```
+
+We're going to create two files that specify how to handle the GTFS-RT & GTFS (Static) data, respectively:
+
+```js
+// gtfs-rt-info.js
+const {normalizeStopName, normalizeLineName} = require('./normalize.js')
+module.exports = {
+	endpointName: 'vbb-hafas',
+	normalizeStopName,
+	normalizeLineName,
+}
+```
+
+```js
+// gtfs-info.js
+const {normalizeStopName, normalizeLineName} = require('./normalize.js')
+module.exports = {
+	endpointName: 'vbb-gtfs',
+	normalizeStopName,
+	normalizeLineName,
+}
+```
+
+Now, we're going to use `match-gtfs-rt-to-gtfs/build-index.js` to import additional data into the database that is needed for matching:
 
 ```shell
-./build-index.js | psql -b
+./build-index.js gtfs-rt-info.js gtfs-info.js | psql -b
 ```
-
-### using the database
-
-Check the [example code](example.js).
-
-
-## How it works
-
-`gtfs-via-postgres` adds a [view](https://www.postgresql.org/docs/12/sql-createview.html) `arrivals_departures`, which contains every arrival/departure of every trip in the GTFS static dataset. This repo adds another view `arrivals_departures_with_stable_ids`, which combines the data with the "stable IDs" stored in separate tables. It is then used for the matching process, which works essentially like this:
-
-```sql
-SELECT *
-FROM arrivals_departures_with_stable_ids
-WHERE (
-	stop_stable_ids && ARRAY['stop-id1', 'stop-id2']
-	OR station_stable_ids && ARRAY['station-id1', 'station-id2']
-)
-AND route_stable_ids && ARRAY['route-id1', 'route-id2']
-AND t_departure > '2020-10-16T22:20:48+02:00'
-AND t_departure < '2020-10-16T22:22:48+02:00'
-```
-
-Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) is 356MB as CSV files, ~1.1GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
 
 ### matching data
 
@@ -178,6 +194,25 @@ console.log(await matchDeparture(gtfsRtDep))
 	plannedPlatform: null,
 }
 ```
+
+
+## How it works
+
+`gtfs-via-postgres` adds a [view](https://www.postgresql.org/docs/12/sql-createview.html) `arrivals_departures`, which contains every arrival/departure of every trip in the GTFS static dataset. This repo adds another view `arrivals_departures_with_stable_ids`, which combines the data with the "stable IDs" stored in separate tables. It is then used for the matching process, which works essentially like this:
+
+```sql
+SELECT *
+FROM arrivals_departures_with_stable_ids
+WHERE (
+	stop_stable_ids && ARRAY['stop-id1', 'stop-id2']
+	OR station_stable_ids && ARRAY['station-id1', 'station-id2']
+)
+AND route_stable_ids && ARRAY['route-id1', 'route-id2']
+AND t_departure > '2020-10-16T22:20:48+02:00'
+AND t_departure < '2020-10-16T22:22:48+02:00'
+```
+
+Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) is 356MB as CSV files, ~1.1GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
 
 
 ## Contributing
