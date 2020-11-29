@@ -35,6 +35,8 @@ const MATCHED = require('../lib/matched')
 
 	const matched = await match(unmatched)
 	console.log(inspect(matched, {depth: null, colors: true}))
+
+	process.exit(matched[MATCHED] ? 0 : 2)
 })()
 .catch((err) => {
 	console.error(err)
