@@ -1,0 +1,74 @@
+{
+	"tripId": "1|45201|1|80|29112020",
+	"stop": {
+		"type": "stop",
+		"id": "107531",
+		"name": "Dammtor (Messe/CCH)",
+		"location": {
+			"type": "location",
+			"id": "107531",
+			"latitude": 53.560949,
+			"longitude": 9.989739
+		},
+		"products": {
+			"subway": false,
+			"suburban": true,
+			"akn": false,
+			"regional-express-train": false,
+			"regional-train": false,
+			"ferry": false,
+			"bus": true,
+			"express-bus": true,
+			"anruf-sammel-taxi": false,
+			"long-distance-train": false,
+			"long-distance-bus": false
+		},
+		"station": {
+			"type": "station",
+			"id": "163",
+			"name": "Dammtor (Messe/CCH)",
+			"location": {
+				"type": "location",
+				"id": "163",
+				"latitude": 53.560949,
+				"longitude": 9.989739
+			},
+			"products": {
+				"subway": false,
+				"suburban": true,
+				"akn": false,
+				"regional-express-train": false,
+				"regional-train": false,
+				"ferry": false,
+				"bus": true,
+				"express-bus": true,
+				"anruf-sammel-taxi": false,
+				"long-distance-train": false,
+				"long-distance-bus": false
+			}
+		}
+	},
+	"when": "2020-11-29T20:09:00+01:00",
+	"plannedWhen": "2020-11-29T20:09:00+01:00",
+	"delay": 0,
+	"platform": "2",
+	"plannedPlatform": "2",
+	"direction": "Berliner Tor",
+	"provenance": null,
+	"line": {
+		"type": "line",
+		"id": "sbahns-s31-s31",
+		"fahrtNr": "90141",
+		"name": "S31",
+		"public": true,
+		"adminCode": "SBAHNS",
+		"mode": "train",
+		"product": "suburban",
+		"operator": {
+			"type": "operator",
+			"id": "s-bahn",
+			"name": "S-Bahn"
+		}
+	},
+	"remarks": []
+}

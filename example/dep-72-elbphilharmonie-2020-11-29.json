@@ -1,0 +1,74 @@
+{
+	"tripId": "1|19573|32|80|29112020",
+	"stop": {
+		"type": "stop",
+		"id": "101481",
+		"name": "Elbphilharmonie",
+		"location": {
+			"type": "location",
+			"id": "101481",
+			"latitude": 53.540328,
+			"longitude": 9.98644
+		},
+		"products": {
+			"subway": false,
+			"suburban": false,
+			"akn": false,
+			"regional-express-train": false,
+			"regional-train": false,
+			"ferry": true,
+			"bus": false,
+			"express-bus": false,
+			"anruf-sammel-taxi": false,
+			"long-distance-train": false,
+			"long-distance-bus": false
+		},
+		"station": {
+			"type": "station",
+			"id": "6242",
+			"name": "Elbphilharmonie",
+			"location": {
+				"type": "location",
+				"id": "6242",
+				"latitude": 53.540328,
+				"longitude": 9.98644
+			},
+			"products": {
+				"subway": false,
+				"suburban": false,
+				"akn": false,
+				"regional-express-train": false,
+				"regional-train": false,
+				"ferry": true,
+				"bus": false,
+				"express-bus": false,
+				"anruf-sammel-taxi": false,
+				"long-distance-train": false,
+				"long-distance-bus": false
+			}
+		}
+	},
+	"when": "2020-11-29T20:10:00+01:00",
+	"plannedWhen": "2020-11-29T20:10:00+01:00",
+	"delay": null,
+	"platform": null,
+	"plannedPlatform": null,
+	"direction": "St. Pauli-Landungsbrücken über Elbphilharmonie",
+	"provenance": null,
+	"line": {
+		"type": "line",
+		"id": "hadagz-72",
+		"fahrtNr": "1313",
+		"name": "72",
+		"public": true,
+		"adminCode": "HADAGZ",
+		"mode": "watercraft",
+		"product": "ferry",
+		"operator": {
+			"type": "operator",
+			"id": "hadag-zvu",
+			"name": "HADAG-ZVU"
+		}
+	},
+	"remarks": []
+}

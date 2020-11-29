@@ -1,0 +1,74 @@
+{
+	"tripId": "1|38068|0|80|29112020",
+	"stop": {
+		"type": "stop",
+		"id": "16270",
+		"name": "Lübecker Straße",
+		"location": {
+			"type": "location",
+			"id": "16270",
+			"latitude": 53.560095,
+			"longitude": 10.028788
+		},
+		"products": {
+			"subway": true,
+			"suburban": false,
+			"akn": false,
+			"regional-express-train": false,
+			"regional-train": false,
+			"ferry": false,
+			"bus": true,
+			"express-bus": false,
+			"anruf-sammel-taxi": false,
+			"long-distance-train": false,
+			"long-distance-bus": false
+		},
+		"station": {
+			"type": "station",
+			"id": "82",
+			"name": "Lübecker Straße",
+			"location": {
+				"type": "location",
+				"id": "82",
+				"latitude": 53.560095,
+				"longitude": 10.028788
+			},
+			"products": {
+				"subway": true,
+				"suburban": false,
+				"akn": false,
+				"regional-express-train": false,
+				"regional-train": false,
+				"ferry": false,
+				"bus": true,
+				"express-bus": false,
+				"anruf-sammel-taxi": false,
+				"long-distance-train": false,
+				"long-distance-bus": false
+			}
+		}
+	},
+	"when": "2020-11-29T19:54:00+01:00",
+	"plannedWhen": "2020-11-29T19:54:00+01:00",
+	"delay": 0,
+	"platform": "1",
+	"plannedPlatform": "1",
+	"direction": "Barmbek",
+	"provenance": null,
+	"line": {
+		"type": "line",
+		"id": "hha-u-u3",
+		"fahrtNr": "57847",
+		"name": "U3",
+		"public": true,
+		"adminCode": "HHA-U_",
+		"mode": "train",
+		"product": "subway",
+		"operator": {
+			"type": "operator",
+			"id": "hochbahn-u-bahn",
+			"name": "HOCHBAHN - U-Bahn"
+		}
+	},
+	"remarks": []
+}
