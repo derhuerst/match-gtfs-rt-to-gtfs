@@ -195,6 +195,28 @@ console.log(await matchDeparture(gtfsRtDep))
 }
 ```
 
+### finding the shape of a trip
+
+```js
+const findShape = require('match-gtfs-rt-to-gtfs/find-shape')
+
+const someTripId = '24582338' // some U3 trip from the HVV dataset
+await findShape(someTripId)
+```
+
+`findShape` resolves with a [GeoJSON `LineString`](https://tools.ietf.org/html/rfc7946#section-3.1.4):
+
+```js
+{
+	type: 'LineString',
+	coordinates: [
+		[10.044385, 53.5872],
+		// …
+		[10.074888, 53.592473]
+	],
+}
+```
+
 
 ## How it works
 

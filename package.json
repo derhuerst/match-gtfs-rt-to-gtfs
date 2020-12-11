@@ -9,6 +9,7 @@
 	"files": [
 		"build-index.js",
 		"index.js",
+		"find-shape.js",
 		"lib",
 		"example"
 	],
