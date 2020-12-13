@@ -1,0 +1,1591 @@
+{
+	"origin": {
+		"type": "stop",
+		"id": "16341",
+		"name": "Norderstedt Mitte",
+		"location": {
+			"type": "location",
+			"id": "16341",
+			"latitude": 53.707527,
+			"longitude": 9.992526
+		},
+		"products": {
+			"subway": true,
+			"suburban": false,
+			"akn": true,
+			"regional-express-train": false,
+			"regional-train": false,
+			"ferry": false,
+			"bus": true,
+			"express-bus": false,
+			"anruf-sammel-taxi": false,
+			"long-distance-train": false,
+			"long-distance-bus": false
+		}
+	},
+	"destination": {
+		"type": "stop",
+		"id": "16416",
+		"name": "Ohlstedt",
+		"location": {
+			"type": "location",
+			"id": "16416",
+			"latitude": 53.694385,
+			"longitude": 10.137207
+		},
+		"products": {
+			"subway": true,
+			"suburban": false,
+			"akn": false,
+			"regional-express-train": false,
+			"regional-train": false,
+			"ferry": false,
+			"bus": true,
+			"express-bus": false,
+			"anruf-sammel-taxi": false,
+			"long-distance-train": false,
+			"long-distance-bus": false
+		}
+	},
+	"departure": "2020-12-13T15:56:00+01:00",
+	"plannedDeparture": "2020-12-13T15:56:00+01:00",
+	"departureDelay": 0,
+	"arrival": "2020-12-13T17:12:00+01:00",
+	"plannedArrival": "2020-12-13T17:13:00+01:00",
+	"arrivalDelay": -60,
+	"reachable": true,
+	"line": {
+		"type": "line",
+		"id": "u1",
+		"fahrtNr": "74818",
+		"name": "U1",
+		"public": true,
+		"adminCode": "HHA-U_",
+		"mode": "train",
+		"product": "subway",
+		"operator": {
+			"type": "operator",
+			"id": "hochbahn-u-bahn",
+			"name": "HOCHBAHN - U-Bahn"
+		}
+	},
+	"direction": "Ohlstedt",
+	"arrivalPlatform": null,
+	"plannedArrivalPlatform": null,
+	"departurePlatform": null,
+	"plannedDeparturePlatform": null,
+	"stopovers": [
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16341",
+				"name": "Norderstedt Mitte",
+				"location": {
+					"type": "location",
+					"id": "16341",
+					"latitude": 53.707527,
+					"longitude": 9.992526
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": true,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": null,
+			"plannedArrival": null,
+			"arrivalDelay": null,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T15:56:00+01:00",
+			"plannedDeparture": "2020-12-13T15:56:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16343",
+				"name": "Richtweg",
+				"location": {
+					"type": "location",
+					"id": "16343",
+					"latitude": 53.695634,
+					"longitude": 9.989658
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T15:58:00+01:00",
+			"plannedArrival": "2020-12-13T15:58:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T15:58:00+01:00",
+			"plannedDeparture": "2020-12-13T15:58:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16345",
+				"name": "Garstedt",
+				"location": {
+					"type": "location",
+					"id": "16345",
+					"latitude": 53.68544,
+					"longitude": 9.986045
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:00:00+01:00",
+			"plannedArrival": "2020-12-13T16:00:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:00:00+01:00",
+			"plannedDeparture": "2020-12-13T16:00:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16479",
+				"name": "Ochsenzoll",
+				"location": {
+					"type": "location",
+					"id": "16479",
+					"latitude": 53.67815,
+					"longitude": 10.001596
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:02:00+01:00",
+			"plannedArrival": "2020-12-13T16:02:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:02:00+01:00",
+			"plannedDeparture": "2020-12-13T16:02:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16481",
+				"name": "Kiwittsmoor",
+				"location": {
+					"type": "location",
+					"id": "16481",
+					"latitude": 53.675211,
+					"longitude": 10.015961
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:03:00+01:00",
+			"plannedArrival": "2020-12-13T16:03:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:03:00+01:00",
+			"plannedDeparture": "2020-12-13T16:03:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16483",
+				"name": "Langenhorn Nord",
+				"location": {
+					"type": "location",
+					"id": "16483",
+					"latitude": 53.660774,
+					"longitude": 10.01757
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:06:00+01:00",
+			"plannedArrival": "2020-12-13T16:06:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:06:00+01:00",
+			"plannedDeparture": "2020-12-13T16:06:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16485",
+				"name": "Langenhorn Markt",
+				"location": {
+					"type": "location",
+					"id": "16485",
+					"latitude": 53.649106,
+					"longitude": 10.017318
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:08:00+01:00",
+			"plannedArrival": "2020-12-13T16:08:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:08:00+01:00",
+			"plannedDeparture": "2020-12-13T16:08:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16403",
+				"name": "Fuhlsbüttel Nord",
+				"location": {
+					"type": "location",
+					"id": "16403",
+					"latitude": 53.639344,
+					"longitude": 10.016779
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:10:00+01:00",
+			"plannedArrival": "2020-12-13T16:10:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:10:00+01:00",
+			"plannedDeparture": "2020-12-13T16:10:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16405",
+				"name": "Fuhlsbüttel",
+				"location": {
+					"type": "location",
+					"id": "16405",
+					"latitude": 53.632431,
+					"longitude": 10.026973
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:12:00+01:00",
+			"plannedArrival": "2020-12-13T16:12:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:12:00+01:00",
+			"plannedDeparture": "2020-12-13T16:12:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16407",
+				"name": "Klein Borstel",
+				"location": {
+					"type": "location",
+					"id": "16407",
+					"latitude": 53.62826,
+					"longitude": 10.03322
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:13:00+01:00",
+			"plannedArrival": "2020-12-13T16:13:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:13:00+01:00",
+			"plannedDeparture": "2020-12-13T16:13:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16467",
+				"name": "Ohlsdorf",
+				"location": {
+					"type": "location",
+					"id": "16467",
+					"latitude": 53.620592,
+					"longitude": 10.031683
+				},
+				"products": {
+					"subway": true,
+					"suburban": true,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:15:00+01:00",
+			"plannedArrival": "2020-12-13T16:15:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:15:00+01:00",
+			"plannedDeparture": "2020-12-13T16:15:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16447",
+				"name": "Sengelmannstraße (City Nord)",
+				"location": {
+					"type": "location",
+					"id": "16447",
+					"latitude": 53.609428,
+					"longitude": 10.022433
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:17:00+01:00",
+			"plannedArrival": "2020-12-13T16:17:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:17:00+01:00",
+			"plannedDeparture": "2020-12-13T16:17:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16449",
+				"name": "Alsterdorf",
+				"location": {
+					"type": "location",
+					"id": "16449",
+					"latitude": 53.606156,
+					"longitude": 10.010918
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:19:00+01:00",
+			"plannedArrival": "2020-12-13T16:19:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:19:00+01:00",
+			"plannedDeparture": "2020-12-13T16:19:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16451",
+				"name": "Lattenkamp (Sporthalle)",
+				"location": {
+					"type": "location",
+					"id": "16451",
+					"latitude": 53.599998,
+					"longitude": 9.994728
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:21:00+01:00",
+			"plannedArrival": "2020-12-13T16:21:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:21:00+01:00",
+			"plannedDeparture": "2020-12-13T16:21:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16453",
+				"name": "Hudtwalckerstraße",
+				"location": {
+					"type": "location",
+					"id": "16453",
+					"latitude": 53.594748,
+					"longitude": 9.996122
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:22:00+01:00",
+			"plannedArrival": "2020-12-13T16:22:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:22:00+01:00",
+			"plannedDeparture": "2020-12-13T16:22:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16455",
+				"name": "Kellinghusenstraße",
+				"location": {
+					"type": "location",
+					"id": "16455",
+					"latitude": 53.588752,
+					"longitude": 9.991007
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:24:00+01:00",
+			"plannedArrival": "2020-12-13T16:24:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": "2",
+			"plannedArrivalPlatform": "2",
+			"departure": "2020-12-13T16:24:00+01:00",
+			"plannedDeparture": "2020-12-13T16:24:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": "2",
+			"plannedDeparturePlatform": "2"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16457",
+				"name": "Klosterstern",
+				"location": {
+					"type": "location",
+					"id": "16457",
+					"latitude": 53.581606,
+					"longitude": 9.988391
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:26:00+01:00",
+			"plannedArrival": "2020-12-13T16:26:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:26:00+01:00",
+			"plannedDeparture": "2020-12-13T16:26:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16291",
+				"name": "Hallerstraße",
+				"location": {
+					"type": "location",
+					"id": "16291",
+					"latitude": 53.573201,
+					"longitude": 9.989164
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:28:00+01:00",
+			"plannedArrival": "2020-12-13T16:28:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:28:00+01:00",
+			"plannedDeparture": "2020-12-13T16:28:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16293",
+				"name": "Stephansplatz (Oper/CCH)",
+				"location": {
+					"type": "location",
+					"id": "16293",
+					"latitude": 53.558809,
+					"longitude": 9.989353
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:30:00+01:00",
+			"plannedArrival": "2020-12-13T16:30:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:30:00+01:00",
+			"plannedDeparture": "2020-12-13T16:30:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16295",
+				"name": "Jungfernstieg",
+				"location": {
+					"type": "location",
+					"id": "16295",
+					"latitude": 53.552742,
+					"longitude": 9.994908
+				},
+				"products": {
+					"subway": true,
+					"suburban": true,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:32:00+01:00",
+			"plannedArrival": "2020-12-13T16:32:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": "1",
+			"plannedArrivalPlatform": "1",
+			"departure": "2020-12-13T16:32:00+01:00",
+			"plannedDeparture": "2020-12-13T16:32:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": "1",
+			"plannedDeparturePlatform": "1"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16297",
+				"name": "Meßberg",
+				"location": {
+					"type": "location",
+					"id": "16297",
+					"latitude": 53.547717,
+					"longitude": 10.000823
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:34:00+01:00",
+			"plannedArrival": "2020-12-13T16:34:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:34:00+01:00",
+			"plannedDeparture": "2020-12-13T16:34:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16284",
+				"name": "Steinstraße",
+				"location": {
+					"type": "location",
+					"id": "16284",
+					"latitude": 53.54911,
+					"longitude": 10.006154
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:35:00+01:00",
+			"plannedArrival": "2020-12-13T16:35:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:35:00+01:00",
+			"plannedDeparture": "2020-12-13T16:35:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16280",
+				"name": "Hauptbahnhof Süd",
+				"location": {
+					"type": "location",
+					"id": "16280",
+					"latitude": 53.552014,
+					"longitude": 10.009462
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:37:00+01:00",
+			"plannedArrival": "2020-12-13T16:37:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": "1",
+			"plannedArrivalPlatform": "1",
+			"departure": "2020-12-13T16:37:00+01:00",
+			"plannedDeparture": "2020-12-13T16:37:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": "1",
+			"plannedDeparturePlatform": "1"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16274",
+				"name": "Lohmühlenstraße",
+				"location": {
+					"type": "location",
+					"id": "16274",
+					"latitude": 53.556697,
+					"longitude": 10.019098
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:39:00+01:00",
+			"plannedArrival": "2020-12-13T16:39:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:39:00+01:00",
+			"plannedDeparture": "2020-12-13T16:39:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16272",
+				"name": "Lübecker Straße",
+				"location": {
+					"type": "location",
+					"id": "16272",
+					"latitude": 53.560095,
+					"longitude": 10.028788
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:41:00+01:00",
+			"plannedArrival": "2020-12-13T16:41:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": "3",
+			"plannedArrivalPlatform": "3",
+			"departure": "2020-12-13T16:41:00+01:00",
+			"plannedDeparture": "2020-12-13T16:41:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": "3",
+			"plannedDeparturePlatform": "3"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16268",
+				"name": "Wartenau",
+				"location": {
+					"type": "location",
+					"id": "16268",
+					"latitude": 53.56476,
+					"longitude": 10.035512
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:42:00+01:00",
+			"plannedArrival": "2020-12-13T16:42:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:42:00+01:00",
+			"plannedDeparture": "2020-12-13T16:42:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16358",
+				"name": "Ritterstraße",
+				"location": {
+					"type": "location",
+					"id": "16358",
+					"latitude": 53.567592,
+					"longitude": 10.046192
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:44:00+01:00",
+			"plannedArrival": "2020-12-13T16:44:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:44:00+01:00",
+			"plannedDeparture": "2020-12-13T16:44:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16356",
+				"name": "Wandsbeker Chaussee",
+				"location": {
+					"type": "location",
+					"id": "16356",
+					"latitude": 53.570334,
+					"longitude": 10.059577
+				},
+				"products": {
+					"subway": true,
+					"suburban": true,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:45:00+01:00",
+			"plannedArrival": "2020-12-13T16:45:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:45:00+01:00",
+			"plannedDeparture": "2020-12-13T16:45:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16354",
+				"name": "Wandsbek Markt",
+				"location": {
+					"type": "location",
+					"id": "16354",
+					"latitude": 53.571646,
+					"longitude": 10.066309
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:47:00+01:00",
+			"plannedArrival": "2020-12-13T16:47:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:47:00+01:00",
+			"plannedDeparture": "2020-12-13T16:47:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16352",
+				"name": "Straßburger Straße",
+				"location": {
+					"type": "location",
+					"id": "16352",
+					"latitude": 53.581795,
+					"longitude": 10.06791
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:49:00+01:00",
+			"plannedArrival": "2020-12-13T16:49:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:49:00+01:00",
+			"plannedDeparture": "2020-12-13T16:49:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16350",
+				"name": "Alter Teichweg",
+				"location": {
+					"type": "location",
+					"id": "16350",
+					"latitude": 53.586649,
+					"longitude": 10.064485
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:50:00+01:00",
+			"plannedArrival": "2020-12-13T16:50:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:50:00+01:00",
+			"plannedDeparture": "2020-12-13T16:50:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16374",
+				"name": "Wandsbek-Gartenstadt",
+				"location": {
+					"type": "location",
+					"id": "16374",
+					"latitude": 53.592357,
+					"longitude": 10.073977
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:52:00+01:00",
+			"plannedArrival": "2020-12-13T16:52:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": "1",
+			"plannedArrivalPlatform": "1",
+			"departure": "2020-12-13T16:53:00+01:00",
+			"plannedDeparture": "2020-12-13T16:53:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": "1",
+			"plannedDeparturePlatform": "1"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16372",
+				"name": "Trabrennbahn",
+				"location": {
+					"type": "location",
+					"id": "16372",
+					"latitude": 53.598434,
+					"longitude": 10.102635
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:55:00+01:00",
+			"plannedArrival": "2020-12-13T16:55:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:55:00+01:00",
+			"plannedDeparture": "2020-12-13T16:55:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16370",
+				"name": "Farmsen",
+				"location": {
+					"type": "location",
+					"id": "16370",
+					"latitude": 53.607252,
+					"longitude": 10.117611
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:57:00+01:00",
+			"plannedArrival": "2020-12-13T16:57:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:57:00+01:00",
+			"plannedDeparture": "2020-12-13T16:57:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "98092",
+				"name": "Oldenfelde",
+				"location": {
+					"type": "location",
+					"id": "98092",
+					"latitude": 53.617365,
+					"longitude": 10.128461
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T16:59:00+01:00",
+			"plannedArrival": "2020-12-13T16:59:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T16:59:00+01:00",
+			"plannedDeparture": "2020-12-13T16:59:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16380",
+				"name": "Berne",
+				"location": {
+					"type": "location",
+					"id": "16380",
+					"latitude": 53.627056,
+					"longitude": 10.139868
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T17:01:00+01:00",
+			"plannedArrival": "2020-12-13T17:01:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T17:01:00+01:00",
+			"plannedDeparture": "2020-12-13T17:01:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16412",
+				"name": "Meiendorfer Weg",
+				"location": {
+					"type": "location",
+					"id": "16412",
+					"latitude": 53.638679,
+					"longitude": 10.155869
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T17:03:00+01:00",
+			"plannedArrival": "2020-12-13T17:03:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T17:03:00+01:00",
+			"plannedDeparture": "2020-12-13T17:03:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16410",
+				"name": "Volksdorf",
+				"location": {
+					"type": "location",
+					"id": "16410",
+					"latitude": 53.650967,
+					"longitude": 10.163465
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T17:06:00+01:00",
+			"plannedArrival": "2020-12-13T17:06:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T17:06:00+01:00",
+			"plannedDeparture": "2020-12-13T17:06:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16425",
+				"name": "Buckhorn",
+				"location": {
+					"type": "location",
+					"id": "16425",
+					"latitude": 53.664334,
+					"longitude": 10.155869
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": false,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T17:08:00+01:00",
+			"plannedArrival": "2020-12-13T17:08:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T17:08:00+01:00",
+			"plannedDeparture": "2020-12-13T17:08:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16421",
+				"name": "Hoisbüttel",
+				"location": {
+					"type": "location",
+					"id": "16421",
+					"latitude": 53.677782,
+					"longitude": 10.147887
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T17:10:00+01:00",
+			"plannedArrival": "2020-12-13T17:10:00+01:00",
+			"arrivalDelay": 0,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-13T17:10:00+01:00",
+			"plannedDeparture": "2020-12-13T17:10:00+01:00",
+			"departureDelay": 0,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16416",
+				"name": "Ohlstedt",
+				"location": {
+					"type": "location",
+					"id": "16416",
+					"latitude": 53.694385,
+					"longitude": 10.137207
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-13T17:12:00+01:00",
+			"plannedArrival": "2020-12-13T17:13:00+01:00",
+			"arrivalDelay": -60,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": null,
+			"plannedDeparture": null,
+			"departureDelay": null,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		}
+	],
+	"remarks": [
+		{
+			"type": "hint",
+			"code": "AA",
+			"text": "Behindertengerecht"
+		},
+		{
+			"id": "HIM_ADAPTER_FREETEXT_1312163987",
+			"type": "warning",
+			"summary": "Verbot von Gesichts- und Kinnvisieren im HVV",
+			"text": "Aktuell besteht in allen Bahnen, Bussen und Fähren des HVV sowie an allen Haltestellen die Pflicht zum Tragen eines Mund-Nasen-Schutzes. \nGesichts- und Kinnvisiere aus z.B. Plexiglas sind nicht zulässig.\nBei Zuwiderhandlung ist eine Vertragsstrafe von 40 Euro zu zahlen.\n",
+			"icon": {
+				"type": "rt_warn",
+				"title": null
+			},
+			"priority": 100,
+			"products": {
+				"subway": true,
+				"suburban": true,
+				"akn": true,
+				"regional-express-train": true,
+				"regional-train": true,
+				"ferry": true,
+				"bus": true,
+				"express-bus": true,
+				"anruf-sammel-taxi": true,
+				"long-distance-train": true,
+				"long-distance-bus": true
+			},
+			"category": 0,
+			"validFrom": "2020-11-22T01:00:00+01:00",
+			"validUntil": "2021-01-01T06:59:59+01:00",
+			"modified": "2020-12-13T16:39:07+01:00"
+		}
+	],
+	"id": "1|66631|0|80|13122020"
+}

@@ -1,0 +1,370 @@
+{
+	"direction": "Wandsbek-Gartenstadt",
+	"tripId": "1|38057|8|80|2122020",
+	"line": {
+		"type": "line",
+		"id": "hha-u-u3",
+		"fahrtNr": null,
+		"name": "U3",
+		"public": true,
+		"mode": "train",
+		"product": "subway"
+	},
+	"location": {
+		"type": "location",
+		"latitude": 53.564607,
+		"longitude": 10.026802
+	},
+	"nextStopovers": [
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16396",
+				"name": "Barmbek",
+				"location": {
+					"type": "location",
+					"id": "16396",
+					"latitude": 53.587305,
+					"longitude": 10.044385
+				},
+				"products": {
+					"subway": true,
+					"suburban": true,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": null,
+			"plannedArrival": null,
+			"arrivalDelay": null,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": "2020-12-02T16:27:00+01:00",
+			"plannedDeparture": "2020-12-02T16:27:00+01:00",
+			"departureDelay": null,
+			"departurePlatform": "2",
+			"plannedDeparturePlatform": "2"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16266",
+				"name": "Uhlandstraße",
+				"location": {
+					"type": "location",
+					"id": "16266",
+					"latitude": 53.564607,
+					"longitude": 10.026802
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-02T17:00:00+01:00",
+			"plannedArrival": "2020-12-02T17:00:00+01:00",
+			"arrivalDelay": null,
+			"arrivalPlatform": "1",
+			"plannedArrivalPlatform": "1",
+			"departure": "2020-12-02T17:00:00+01:00",
+			"plannedDeparture": "2020-12-02T17:00:00+01:00",
+			"departureDelay": null,
+			"departurePlatform": "1",
+			"plannedDeparturePlatform": "1"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16390",
+				"name": "Mundsburg",
+				"location": {
+					"type": "location",
+					"id": "16390",
+					"latitude": 53.569426,
+					"longitude": 10.027539
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-02T17:01:00+01:00",
+			"plannedArrival": "2020-12-02T17:01:00+01:00",
+			"arrivalDelay": null,
+			"arrivalPlatform": "1",
+			"plannedArrivalPlatform": "1",
+			"departure": "2020-12-02T17:01:00+01:00",
+			"plannedDeparture": "2020-12-02T17:01:00+01:00",
+			"departureDelay": null,
+			"departurePlatform": "1",
+			"plannedDeparturePlatform": "1"
+		},
+		{
+			"stop": {
+				"type": "stop",
+				"id": "16376",
+				"name": "Wandsbek-Gartenstadt",
+				"location": {
+					"type": "location",
+					"id": "16376",
+					"latitude": 53.592357,
+					"longitude": 10.073977
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"arrival": "2020-12-02T17:12:00+01:00",
+			"plannedArrival": "2020-12-02T17:12:00+01:00",
+			"arrivalDelay": null,
+			"arrivalPlatform": null,
+			"plannedArrivalPlatform": null,
+			"departure": null,
+			"plannedDeparture": null,
+			"departureDelay": null,
+			"departurePlatform": null,
+			"plannedDeparturePlatform": null
+		}
+	],
+	"frames": [
+		{
+			"origin": {
+				"type": "stop",
+				"id": "16266",
+				"name": "Uhlandstraße",
+				"location": {
+					"type": "location",
+					"id": "16266",
+					"latitude": 53.564607,
+					"longitude": 10.026802
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"destination": {
+				"type": "stop",
+				"id": "16390",
+				"name": "Mundsburg",
+				"location": {
+					"type": "location",
+					"id": "16390",
+					"latitude": 53.569426,
+					"longitude": 10.027539
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"t": 0
+		},
+		{
+			"origin": {
+				"type": "stop",
+				"id": "16266",
+				"name": "Uhlandstraße",
+				"location": {
+					"type": "location",
+					"id": "16266",
+					"latitude": 53.564607,
+					"longitude": 10.026802
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"destination": {
+				"type": "stop",
+				"id": "16390",
+				"name": "Mundsburg",
+				"location": {
+					"type": "location",
+					"id": "16390",
+					"latitude": 53.569426,
+					"longitude": 10.027539
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"t": 10000
+		},
+		{
+			"origin": {
+				"type": "stop",
+				"id": "16266",
+				"name": "Uhlandstraße",
+				"location": {
+					"type": "location",
+					"id": "16266",
+					"latitude": 53.564607,
+					"longitude": 10.026802
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"destination": {
+				"type": "stop",
+				"id": "16390",
+				"name": "Mundsburg",
+				"location": {
+					"type": "location",
+					"id": "16390",
+					"latitude": 53.569426,
+					"longitude": 10.027539
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"t": 20000
+		},
+		{
+			"origin": {
+				"type": "stop",
+				"id": "16266",
+				"name": "Uhlandstraße",
+				"location": {
+					"type": "location",
+					"id": "16266",
+					"latitude": 53.564607,
+					"longitude": 10.026802
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": false,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"destination": {
+				"type": "stop",
+				"id": "16390",
+				"name": "Mundsburg",
+				"location": {
+					"type": "location",
+					"id": "16390",
+					"latitude": 53.569426,
+					"longitude": 10.027539
+				},
+				"products": {
+					"subway": true,
+					"suburban": false,
+					"akn": false,
+					"regional-express-train": false,
+					"regional-train": false,
+					"ferry": false,
+					"bus": true,
+					"express-bus": true,
+					"anruf-sammel-taxi": false,
+					"long-distance-train": false,
+					"long-distance-bus": false
+				}
+			},
+			"t": 30000
+		}
+	]
+}
