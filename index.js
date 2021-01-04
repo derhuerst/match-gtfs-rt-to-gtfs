@@ -7,9 +7,11 @@ const {
 } = require('./lib/match-arrival-departure')
 const createMatchTrip = require('./lib/match-trip')
 const createMatchMovement = require('./lib/match-movement')
+const redis = require('./lib/redis')
 const db = require('./lib/db')
 
 const close = async () => {
+	await redis.quit()
 	await db.end()
 }
 
@@ -20,7 +22,10 @@ const createMatch = (gtfsRtInfo, gtfsInfo) => {
 		matchDeparture: createMatchDeparture(gtfsRtInfo, gtfsInfo),
 		matchTrip: createMatchTrip(gtfsRtInfo, gtfsInfo),
 		matchMovement: createMatchMovement(gtfsRtInfo, gtfsInfo),
+
+		close,
 		db,
+		redis,
 	}
 }
 
