@@ -25,6 +25,7 @@ const MATCHED = require('../lib/matched')
 		match = createMatchTrip(gtfsRtInfo, gtfsInfo)
 	} else if (mode === 'movement') {
 		match = createMatchMovement(gtfsRtInfo, gtfsInfo)
+		match.trip = match.trip // make field enumerable
 	} else {
 		throw new Error('missing/invalid mode')
 	}
