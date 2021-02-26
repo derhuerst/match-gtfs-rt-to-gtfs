@@ -1,7 +1,7 @@
 {
 	"name": "match-gtfs-rt-to-gtfs",
 	"description": "Match GTFS Realtime data with GTFS Static data, even if they don't share an ID.",
-	"version": "3.4.1",
+	"version": "3.5.0",
 	"main": "index.js",
 	"bin": {
 		"build-gtfs-match-index": "build-index.js"
@@ -40,7 +40,7 @@
 		"mri": "^1.1.6",
 		"pg": "^8.3.3",
 		"pg-format": "^1.0.4",
-		"pg-query-stream": "^3.2.3",
+		"pg-query-stream": "^4.0.0",
 		"slugg": "^1.2.1",
 		"tokenize-vbb-station-name": "^1.1.0"
 	},
