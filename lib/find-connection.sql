@@ -19,9 +19,9 @@ SELECT
     	date_part('month'::text, date)::integer,
     	date_part('day'::text, date)::integer,
     	12, 0, 0::double precision,
-    	'Europe/Berlin'::text
+    	'Europe/Berlin'::text # todo: don't hardcode this
     ) - '12:00:00'::interval + departure_time AS t_departure,
-    
+
 	to_stop_id,
 	to_stop_name,
 	to_stop_stable_ids,
@@ -33,7 +33,7 @@ SELECT
     	date_part('month'::text, date)::integer,
     	date_part('day'::text, date)::integer,
     	12, 0, 0::double precision,
-    	'Europe/Berlin'::text
+    	'Europe/Berlin'::text # todo: don't hardcode this
     ) - '12:00:00'::interval + arrival_time AS t_arrival
 FROM (
 SELECT
