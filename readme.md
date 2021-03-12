@@ -1,6 +1,6 @@
 # match-gtfs-rt-to-gtfs
 
-Try to **match realtime transit data (e.g. from [GTFS Realtime](https://gtfs.org/reference/realtime/v2/)) with [GTFS Static](https://gtfs.org/reference/static) data**, even if they don't share an ID.
+Try to **match realtime transit data (e.g. from [GTFS Realtime (GTFS-RT)](https://gtfs.org/reference/realtime/v2/)) with [GTFS Static](https://gtfs.org/reference/static) data**, even if they don't share an ID.
 
 [![npm version](https://img.shields.io/npm/v/match-gtfs-rt-to-gtfs.svg)](https://www.npmjs.com/package/match-gtfs-rt-to-gtfs)
 [![build status](https://api.travis-ci.org/derhuerst/match-gtfs-rt-to-gtfs.svg?branch=master)](https://travis-ci.org/derhuerst/match-gtfs-rt-to-gtfs)
