@@ -13,6 +13,9 @@
 		"lib",
 		"example"
 	],
+	"match-gtfs-rt-to-gtfs": {
+		"dataVersion": 1
+	},
 	"keywords": [
 		"gtfs-rt",
 		"gtfs-realtime",
