@@ -38,12 +38,9 @@ To some extent, `match-gtfs-rt-to-gtf` fuzzily matches stop/station & route/line
 
 ```js
 // normalize.js
-const tokenize = require('tokenize-vbb-station-name')
+const normalizeStopName = require('normalize-vbb-station-name-for-search')
 const slugg = require('slugg')
 
-const normalizeStopName = (name) => {
-	return tokenize(name, {meta: 'remove'}).join('-')
-}
 const normalizeLineName = (name) => {
 	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
 }
