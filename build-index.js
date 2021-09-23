@@ -77,7 +77,8 @@ BEGIN;
 	await convert(routes)
 
 	process.stdout.write(`
-		CREATE INDEX ON trips (route_id, trip_id);
+CREATE INDEX ON trips (trip_id);
+CREATE INDEX ON trips (route_id);
 `)
 
 	process.stdout.write(ARRS_DEPS_WITH_STABLE_IDS)
