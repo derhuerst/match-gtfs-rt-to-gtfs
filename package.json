@@ -30,7 +30,7 @@
 	"bugs": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=12"
+		"node": ">=14"
 	},
 	"dependencies": {
 		"@derhuerst/stable-public-transport-ids": "^1.2.0",
@@ -50,7 +50,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^7.3.0",
-		"gtfs-via-postgres": "^2.5.0",
+		"gtfs-via-postgres": "^3.0.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
 		"tap-min": "^2.0.0",

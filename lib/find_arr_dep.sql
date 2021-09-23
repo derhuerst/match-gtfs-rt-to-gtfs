@@ -11,13 +11,13 @@ CREATE TYPE arr_dep AS (
 	"when" timestamp with time zone,
 	stop_id text,
 	stop_name text,
-	stable_id text,
+	stop_stable_id text,
 	station_id text,
 	station_name text
 );
 
 CREATE FUNCTION find_departure(
-	stable_ids text[],
+	stop_stable_ids text[],
 	route_stable_ids text[],
 	when_min timestamptz,
 	when_max timestamptz,
@@ -40,12 +40,12 @@ AS $$ BEGIN
 		t_departure as "when",
 		stop_id,
 		stop_name,
-		stable_id,
+		stop_stable_id,
 		station_id,
 		station_name
 	FROM arrivals_departures_with_stable_ids arrs_deps
 
-	WHERE arrs_deps.stable_id = ANY(stable_ids)
+	WHERE arrs_deps.stop_stable_id = ANY(stop_stable_ids)
 
 	AND arrs_deps.route_stable_id = ANY(route_stable_ids)
 
@@ -58,7 +58,7 @@ AS $$ BEGIN
 END $$ LANGUAGE plpgsql;
 
 CREATE FUNCTION find_arrival(
-	stable_ids text[],
+	stop_stable_ids text[],
 	route_stable_ids text[],
 	when_min timestamptz,
 	when_max timestamptz,
@@ -81,12 +81,12 @@ AS $$ BEGIN
 		t_arrival as "when",
 		stop_id,
 		stop_name,
-		stable_id,
+		stop_stable_id,
 		station_id,
 		station_name
 	FROM arrivals_departures_with_stable_ids arrs_deps
 
-	WHERE arrs_deps.stable_id = ANY(stable_ids)
+	WHERE arrs_deps.stop_stable_id = ANY(stop_stable_ids)
 
 	AND arrs_deps.route_stable_id = ANY(route_stable_ids)
 

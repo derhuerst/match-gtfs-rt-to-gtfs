@@ -3,7 +3,7 @@ os: linux
 node_js:
   - node
   - 'lts/*'
-  - '10'
+  - '14'
 services:
   - postgresql
   - redis-server

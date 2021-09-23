@@ -9,7 +9,6 @@ SELECT
 	trips.trip_short_name,
 	"date",
 	stop_times.stop_sequence,
-	service_days.t_base,
 	(
 		make_timestamptz(
 			date_part('year', "date")::int,
@@ -35,7 +34,7 @@ SELECT
 		+ departure_time
 	) t_departure,
 	stops.stop_id,
-	stops.stable_id,
+	stops.stop_stable_id,
 	stops.stop_name,
 	stops.station_id,
 	stops.station_stable_id,
