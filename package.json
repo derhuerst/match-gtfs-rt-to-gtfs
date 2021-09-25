@@ -34,6 +34,7 @@
 	},
 	"dependencies": {
 		"@derhuerst/stable-public-transport-ids": "^1.2.0",
+		"csv-stringify": "^5.6.5",
 		"debug": "^4.2.0",
 		"find-hafas-data-in-another-hafas": "^4.2.0",
 		"gtfs-utils": "^4.3.1",
