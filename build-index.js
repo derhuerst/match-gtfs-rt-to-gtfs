@@ -78,11 +78,14 @@ BEGIN;
 
 	process.stdout.write(`
 		CREATE INDEX ON trips (route_id, trip_id);
-COMMIT;
 `)
 
 	process.stdout.write(ARRS_DEPS_WITH_STABLE_IDS)
 	process.stdout.write(FIND_ARR_DEP)
+
+	process.stdout.write(`
+COMMIT;
+`)
 
 	await db.end()
 })()
