@@ -10,7 +10,7 @@ const {
 } = require('../lib/match-arrival-departure')
 const createMatchTrip = require('../lib/match-trip')
 const createMatchMovement = require('../lib/match-movement')
-const MATCHED = require('../lib/matched')
+const {MATCHED} = require('../lib/matched')
 
 ;(async () => {
 	const mode = process.argv[2]
