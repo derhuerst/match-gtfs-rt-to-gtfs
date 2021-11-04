@@ -22,7 +22,26 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    - name: install & start PostgreSQL with PostGIS
+      uses: huaxk/postgis-action@v1
+      with:
+        postgresql password: password
+        postgresql user: postgres
+        postgresql db: postgres
+
+    - name: install & start Redis
+      uses: supercharge/redis-github-action@1.1.0
+      # with:
+      #   redis-version: ${{ matrix.redis-version }}
+
     - run: npm install
 
     - run: npm run lint
     - run: npm test
+      env:
+        PGHOST: localhost
+        PGPORT: '5432'
+        PGUSER: postgres
+        PGPASSWORD: password
+        PGDATABASE: postgres

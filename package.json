@@ -53,11 +53,12 @@
 		"gtfs-via-postgres": "^3.0.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
+		"sample-gtfs-feed": "^0.10.3",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},
 	"scripts": {
-		"test": "env NODE_ENV=dev node test.js | tap-min",
+		"test": "test/index.sh",
 		"lint": "eslint .",
 		"benchmark": "cat benchmark/trips.ndjson.gz | gunzip | node benchmark/index.js",
 		"prepublishOnly": "npm run lint && npm test"
