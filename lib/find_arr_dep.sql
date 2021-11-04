@@ -21,8 +21,8 @@ CREATE FUNCTION find_departure(
 	route_stable_ids text[],
 	when_min timestamptz,
 	when_max timestamptz,
-	t_base_min timestamptz,
-	t_base_max timestamptz
+	date_min timestamp,
+	date_max timestamp
 )
 RETURNS SETOF arr_dep
 AS $$ BEGIN
@@ -49,8 +49,8 @@ AS $$ BEGIN
 
 	AND arrs_deps.route_stable_id = ANY(route_stable_ids)
 
-	AND arrs_deps.t_base > t_base_min
-	AND arrs_deps.t_base < t_base_max
+	AND arrs_deps.date > date_min
+	AND arrs_deps.date < date_max
 	AND arrs_deps.t_departure > when_min
 	AND arrs_deps.t_departure < when_max
 
@@ -62,8 +62,8 @@ CREATE FUNCTION find_arrival(
 	route_stable_ids text[],
 	when_min timestamptz,
 	when_max timestamptz,
-	t_base_min timestamptz,
-	t_base_max timestamptz
+	date_min timestamp,
+	date_max timestamp
 )
 RETURNS SETOF arr_dep
 AS $$ BEGIN
@@ -90,8 +90,8 @@ AS $$ BEGIN
 
 	AND arrs_deps.route_stable_id = ANY(route_stable_ids)
 
-	AND arrs_deps.t_base > t_base_min
-	AND arrs_deps.t_base < t_base_max
+	AND arrs_deps.date > date_min
+	AND arrs_deps.date < date_max
 	AND arrs_deps.t_arrival > when_min
 	AND arrs_deps.t_arrival < when_max
 
