@@ -53,6 +53,37 @@ const testMatchStop = async () => {
 	deepStrictEqual(s1, matched, 'fully matching: matched should be equal')
 	await redis.flushdb()
 
+	const differentLoc = {
+		type: 'location',
+		latitude: fullyMatching.location.latitude + 1,
+		longitude: fullyMatching.location.longitude - 1,
+	}
+	const s2 = await matchStop({
+		...fullyMatching,
+		location: differentLoc,
+	})
+	strictEqual(s2[MATCHED], true, 'matched via ID: MATCHED should be true')
+	deepStrictEqual(s2, {
+		...matched,
+		location: differentLoc,
+	}, 'matched via ID: matched should be equal')
+	await redis.flushdb()
+
+	const differentId = 'foo'
+	const s3 = await matchStop({
+		...fullyMatching,
+		id: differentId,
+	})
+	strictEqual(s3[MATCHED], true, 'matched via ID: MATCHED should be true')
+	deepStrictEqual(s3, {
+		...matched,
+		ids: {
+			...matched.ids,
+			'gtfs-rt': differentId,
+		},
+	}, 'matched via ID: matched should be equal')
+	await redis.flushdb()
+
 	// `lake` was missing because `WHERE location_type != 'node'` excludes `NULL` rows
 	const lake = await matchStop({
 		id: 'lake',

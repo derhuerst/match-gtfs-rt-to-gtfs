@@ -35,9 +35,11 @@ SELECT
 	) t_departure,
 	stops.stop_id,
 	stops.stop_stable_id,
+	stops.stop_stable_id_specificity,
 	stops.stop_name,
 	stops.station_id,
 	stops.station_stable_id,
+	stops.station_stable_id_specificity,
 	stops.station_name
 FROM stop_times
 LEFT JOIN stops_with_stations_and_stable_ids stops ON stop_times.stop_id = stops.stop_id
