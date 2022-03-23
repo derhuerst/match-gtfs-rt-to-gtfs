@@ -9,6 +9,7 @@ SELECT
 	trips.trip_short_name,
 	"date",
 	stop_times.stop_sequence,
+	stop_times.stop_sequence_consec,
 	(
 		make_timestamptz(
 			date_part('year', "date")::int,
