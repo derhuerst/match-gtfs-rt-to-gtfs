@@ -5,6 +5,7 @@ SELECT
 	routes.route_short_name,
 	routes.route_type,
 	stop_times.trip_id,
+	trips.direction_id,
 	trips.trip_headsign,
 	trips.trip_short_name,
 	"date",

@@ -14,7 +14,7 @@
 		"example"
 	],
 	"match-gtfs-rt-to-gtfs": {
-		"dataVersion": 1
+		"dataVersion": 2
 	},
 	"keywords": [
 		"gtfs-rt",
