@@ -1,7 +1,7 @@
 'use strict'
 
 // todo: adapt this to HVV
-const normalizeStopName = require('normalize-vbb-station-name-for-search')
+const _normalizeStopName = require('normalize-vbb-station-name-for-search')
 const slugg = require('slugg')
 
 // we match hafas-client here
@@ -9,6 +9,11 @@ const slugg = require('slugg')
 // todo: check that this actually works with HVV
 const normalizeLineName = (name) => {
 	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
+}
+
+const normalizeStopName = (name, stop) => {
+	// todo: pass options?
+	return _normalizeStopName(name)
 }
 
 module.exports = {

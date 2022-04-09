@@ -12,6 +12,8 @@ const createMatchTrip = require('../lib/match-trip')
 const createMatchMovement = require('../lib/match-movement')
 const {MATCHED} = require('../lib/matched')
 
+Error.stackTraceLimit = Infinity
+
 ;(async () => {
 	const mode = process.argv[2]
 	let match
