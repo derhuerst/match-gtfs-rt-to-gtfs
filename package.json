@@ -30,15 +30,15 @@
 	"bugs": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=14"
+		"node": ">=16"
 	},
 	"dependencies": {
 		"@derhuerst/stable-public-transport-ids": "^2.1.0",
 		"csv-stringify": "^6.0.2",
 		"debug": "^4.2.0",
 		"find-hafas-data-in-another-hafas": "^4.2.0",
-		"gtfs-utils": "^4.3.1",
-		"ioredis": "^4.17.3",
+		"gtfs-utils": "^5.1.0",
+		"ioredis": "^5.0.4",
 		"lodash": "^4.17.20",
 		"luxon": "^2.0.2",
 		"mri": "^1.1.6",
@@ -50,7 +50,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^8.2.0",
-		"gtfs-via-postgres": "^3.0.0",
+		"gtfs-via-postgres": "^4.1.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
 		"sample-gtfs-feed": "^0.10.3",

@@ -22,6 +22,8 @@ git clone https://derhuerst/match-gtfs-rt-to-gtfs.git
 cd match-gtfs-rt-to-gtfs
 ```
 
+*Note:* `match-gtfs-rt-to-gtfs` **needs PostgreSQL >=14** to work, as its dependency [`gtfs-via-postgres`](https://github.com/derhuerst/gtfs-via-postgres) needs that version. You can check your PostgreSQL server's version with `psql -t -c 'SELECT version()'`.
+
 
 ## Usage
 
