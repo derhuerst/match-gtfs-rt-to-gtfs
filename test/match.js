@@ -108,6 +108,9 @@ const testMatchArrDep = async () => {
 	const _fullyMatchingStopover = {
 		tripId: 'b-downtown-on-working-days',
 		directionId: '0',
+		directionIds: {
+			gtfs: '0',
+		},
 		line: {
 			id: 'B',
 			name: 'Babbage', // todo: what about route_long_name "Charles Babbage Tram Line"?
