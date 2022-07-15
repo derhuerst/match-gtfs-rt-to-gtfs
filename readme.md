@@ -234,6 +234,19 @@ AND t_departure < '2020-10-16T22:22:48+02:00'
 Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) is 356MB as CSV files, ~1.1GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
 
 
+## API
+
+### `gtfsInfo`/`gtfsRtInfo`
+
+```ts
+{
+	endpointName: string,
+	normalizeStopName: (name: string, stop: FptfStop) => string,
+	normalizeLineName(name: string, line: FptfLine) => string,
+}
+```
+
+
 ## Contributing
 
 *Note:* This repos blends two families of techinical terms – GTFS-related ones and [FPTF](https://public-transport.github.io/friendly-public-transport-format/)-/[`hafas-client`](https://github.com/public-transport/hafas-client)-related ones –, which makes the code somewhat confusing.
