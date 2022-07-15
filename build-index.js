@@ -26,7 +26,9 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
-const {readFileSync, realpathSync} = require('fs')
+const {readFileSync} = require('fs')
+const {resolve: pathResolve} = require('path')
+const {types: {isModuleNamespaceObject}} = require('util')
 const {Client} = require('pg')
 const QueryStream = require('pg-query-stream')
 const stops = require('./lib/prepare-stable-ids/stops')
@@ -40,12 +42,18 @@ const showError = (err) => {
 	process.exit(1)
 }
 
-if (!argv._[0]) showError('missing/invalid gtfs-rt-info argument')
-const gtfsRtInfo = require(realpathSync(argv._[0]))
-if (!argv._[1]) showError('missing/invalid gtfs-info argument')
-const gtfsInfo = require(realpathSync(argv._[1]))
-
 ;(async () => {
+
+if (!argv._[0]) showError('missing/invalid gtfs-rt-info argument')
+let gtfsRtInfo = await import(pathResolve(process.cwd(), argv._[0]))
+// handle CommonJS modules & default exports
+if (isModuleNamespaceObject(gtfsRtInfo)) gtfsRtInfo = gtfsRtInfo.default
+
+if (!argv._[1]) showError('missing/invalid gtfs-info argument')
+let gtfsInfo = await import(pathResolve(process.cwd(), argv._[1]))
+// handle CommonJS modules & default exports
+if (isModuleNamespaceObject(gtfsInfo)) gtfsInfo = gtfsInfo.default
+
 	const db = new Client()
 	await db.connect()
 
