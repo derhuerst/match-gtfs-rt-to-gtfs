@@ -7,6 +7,7 @@ const {
 } = require('./lib/match-arrival-departure')
 const createMatchTrip = require('./lib/match-trip')
 const createMatchMovement = require('./lib/match-movement')
+const gtfsDataImportedAt = require('./lib/gtfs-data-imported-at')
 const redis = require('./lib/redis')
 const db = require('./lib/db')
 
@@ -23,6 +24,7 @@ const createMatch = (gtfsRtInfo, gtfsInfo) => {
 		matchTrip: createMatchTrip(gtfsRtInfo, gtfsInfo),
 		matchMovement: createMatchMovement(gtfsRtInfo, gtfsInfo),
 
+		gtfsDataImportedAt,
 		close,
 		db,
 		redis,
