@@ -48,9 +48,12 @@
 		"pg-query-stream": "^4.0.0",
 		"slugg": "^1.2.1"
 	},
+	"peerDependencies": {
+		"gtfs-via-postgres": "^4.6.0"
+	},
 	"devDependencies": {
 		"eslint": "^8.2.0",
-		"gtfs-via-postgres": "^4.1.0",
+		"gtfs-via-postgres": "^4.6.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
 		"sample-gtfs-feed": "^0.10.3",
