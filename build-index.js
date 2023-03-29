@@ -16,7 +16,7 @@ if (argv.help || argv.h) {
 Usage:
     build-gtfs-match-index <path-to-gtfs-rt-info> <path-to-gtfs-info>
 Examples:
-    build-gtfs-match-index gtfs-rt.js gtfs.js
+    build-gtfs-match-index gtfs-rt.js gtfs.js | psql -b
 \n`)
 	process.exit(0)
 }

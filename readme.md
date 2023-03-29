@@ -72,7 +72,8 @@ module.exports = {
 
 Now, we're going to use `match-gtfs-rt-to-gtfs/build-index.js` to import additional data into the database that is needed for matching:
 
-```shell
+```bash
+set -o pipefail
 ./build-index.js gtfs-rt-info.js gtfs-info.js | psql -b
 ```
 
@@ -231,7 +232,11 @@ AND t_departure > '2020-10-16T22:20:48+02:00'
 AND t_departure < '2020-10-16T22:22:48+02:00'
 ```
 
-Because PostgreSQL is very smart at optimising a query, we don't need to store a lot of pre-computed data: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) is 356MB as CSV files, ~1.1GB as imported & indexed in the DB, and this repo only adds ~100MB of additional lookup indices.
+Because PostgreSQL executes this query quite efficiently, we don't need to store a pre-computed list index of *all* arrivals/departures, but just an index of their stable stop/station/route IDs.
+
+The size of this additional index depends on how many stable IDs your logic generates for each stop/station/route. Consider the [2020-09-25 VBB GTFS Static feed](https://vbb-gtfs.jannisr.de/2020-09-25) as an example: Without [`shapes.txt`](https://gtfs.org/reference/static/#shapestxt), it is 356MB as CSV files, ~2GB as imported & indexed in the DB by `gtfs-via-posgres`; `match-gtfs-rt-to-gtfs`'s stable IDs indices add another
+- 300MB with few stable IDs per stop/station/route, and
+- 3GB with 10-30 stable IDs each.
 
 
 ## API
