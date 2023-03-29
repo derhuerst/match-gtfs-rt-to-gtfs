@@ -44,7 +44,6 @@
 		"mri": "^1.1.6",
 		"normalize-vbb-station-name-for-search": "^1.0.0",
 		"pg": "^8.3.3",
-		"pg-format": "^1.0.4",
 		"pg-query-stream": "^4.0.0",
 		"slugg": "^1.2.1"
 	},
