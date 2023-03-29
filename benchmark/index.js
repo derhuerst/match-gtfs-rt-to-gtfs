@@ -6,18 +6,20 @@ const {
 } = require('../example/util')
 const {pipeline} = require('stream')
 const {writable: parallelWritable} = require('parallel-stream')
+const {cpus: osCpus} = require('os')
 const {parse} = require('ndjson')
 const createMatchTrip = require('../lib/match-trip')
 const db = require('../lib/db')
 const redis = require('../lib/redis')
 
+// todo: make configurable, like in build-index.js
 const gtfsRtInfo = {
-	endpointName: 'hvv-hafas',
+	endpointName: 'vbb-hafas',
 	normalizeStopName,
 	normalizeLineName,
 }
 const gtfsInfo = {
-	endpointName: 'hvv',
+	endpointName: 'gtfs',
 	normalizeStopName,
 	normalizeLineName,
 }
@@ -47,7 +49,9 @@ pipeline(
 	parse(),
 	parallelWritable(processTrip, {
 		objectMode: true,
-		concurrency: 8,
+		concurrency: process.env.MATCH_CONCURRENCY
+			? parseInt(process.env.MATCH_CONCURRENCY)
+			: osCpus().length,
 	}),
 	(err) => {
 		if (err) {
@@ -62,10 +66,10 @@ pipeline(
 			return {
 				count: l,
 				sum: vals.reduce((s, x) => s + x, 0),
-				average: vals.reduce((s, x) => s + x, 0) / l,
-				median: vals[Math.round((l - 1) / 2)],
-				p90: vals[Math.round((l - 1) * .9)],
-				p95: vals[Math.round((l - 1) * .95)],
+				average: l > 0 ? vals.reduce((s, x) => s + x, 0) / l : null,
+				median: l > 0 ? vals[Math.round((l - 1) / 2)] : null,
+				p90: l > 0 ? vals[Math.round((l - 1) * .9)] : null,
+				p95: l > 0 ? vals[Math.round((l - 1) * .95)] : null,
 			}
 		}
 		console.log({
