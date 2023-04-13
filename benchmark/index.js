@@ -1,9 +1,5 @@
 'use strict'
 
-const {
-	normalizeStopName,
-	normalizeLineName,
-} = require('../example/util')
 const {pipeline} = require('stream')
 const {writable: parallelWritable} = require('parallel-stream')
 const {cpus: osCpus} = require('os')
@@ -12,17 +8,9 @@ const createMatchTrip = require('../lib/match-trip')
 const db = require('../lib/db')
 const redis = require('../lib/redis')
 
-// todo: make configurable, like in build-index.js
-const gtfsRtInfo = {
-	endpointName: 'vbb-hafas',
-	normalizeStopName,
-	normalizeLineName,
-}
-const gtfsInfo = {
-	endpointName: 'gtfs',
-	normalizeStopName,
-	normalizeLineName,
-}
+const gtfsRtInfo = require('./gtfs-rt-info.js')
+const gtfsInfo = require('./gtfs-info.js')
+
 const matchTrip = createMatchTrip(gtfsRtInfo, gtfsInfo)
 
 const times = []

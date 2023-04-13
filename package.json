@@ -60,7 +60,7 @@
 	"scripts": {
 		"test": "test/index.sh",
 		"lint": "eslint .",
-		"benchmark": "cat benchmark/trips.ndjson.gz | gunzip | node benchmark/index.js",
+		"benchmark": "./benchmark/index.sh",
 		"prepublishOnly": "npm run lint && npm test"
 	}
 }
