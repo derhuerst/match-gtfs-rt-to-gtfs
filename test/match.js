@@ -307,6 +307,17 @@ const testMatchTrip = async () => {
 	const actualTrip = await matchTrip(tripA)
 	strictEqual(actualTrip[MATCHED], true, 'MATCHED should be true')
 
+	strictEqual(
+		actualTrip.stopovers[0].stopoverIndex,
+		1,
+		'stopovers[0].stopoverIndex should match GTFS stop_sequence',
+	)
+	strictEqual(
+		actualTrip.stopovers[actualTrip.stopovers.length - 1].stopoverIndex,
+		5,
+		'last(stopovers).stopoverIndex should match GTFS stop_sequence',
+	)
+
 	await redis.flushdb()
 	console.info('matchTrip() seems to be working ✔︎')
 }
