@@ -17,7 +17,7 @@ const MATCHED = Symbol.for('match-gtfs-rt-to-gtfs:matched')
 const {
 	matchStop,
 	matchArrival, // matchDeparture,
-	// matchTrip,
+	matchTrip,
 } = createMatch(gtfsRtInfo, gtfsInfo)
 
 const testMatchStop = async () => {
@@ -246,11 +246,77 @@ const testMatchArrDep = async () => {
 	console.info('matchArrival() seems to be working ✔︎')
 }
 
+const testMatchTrip = async () => {
+	const stopoverA1 = {
+		arrival: '2019-05-29T13:15:20+02:00',
+		plannedArrival: '2019-05-29T13:13:00+02:00',
+		arrivalDelay: 200,
+		departure: '2019-05-29T13:15:40+02:00',
+		plannedDeparture: '2019-05-29T13:14:00+02:00',
+		departureDelay: 100,
+		stop: {
+			type: 'stop',
+			id: 'airport',
+			name: 'International aIrPoRt (abc)', // doesn't match exactly
+			// doesn't match exactly
+			location: {type: 'location', latitude: 52.366, longitude: 13.512},
+		},
+	}
+	const stopoverA5 = {
+		arrival: '2019-05-29T13:31:01+02:00',
+		plannedArrival: '2019-05-29T13:30:00+02:00',
+		arrivalDelay: 61,
+		departure: '2019-05-29T13:31:12+02:00',
+		plannedDeparture: '2019-05-29T13:31:00+02:00',
+		departureDelay: 12,
+		stop: {
+			type: 'stop',
+			id: 'center',
+			name: 'City Center',
+			location: {type: 'location', latitude: 52.5, longitude: 13.5},
+		},
+	}
+	const tripA = {
+		id: 'b-downtown-on-working-days',
+		directionId: '0',
+		directionIds: {
+			gtfs: '0',
+		},
+		line: {
+			id: 'B',
+			name: 'Babbage',
+			mode: 'train',
+			operator: {id: 'FTA'},
+		},
+
+		...pick(stopoverA1, [
+			'departure', 'plannedDeparture', 'departureDelay',
+		]),
+		...pick(stopoverA5, [
+			'arrival', 'plannedArrival', 'arrivalDelay',
+		]),
+
+		// in the GTFS, b-downtown-on-working-days has the following stop_times:
+		// - stop_seq: 1, arr_time: 13:13:00, dep_time: 13:14:00, stop_id: airport
+		// - stop_seq: 3, arr_time: 13:20:00, dep_time: 13:22:00, stop_id: lake, pickup_type: 3
+		// - stop_seq: 5, arr_time: 13:30:00, dep_time: 13:31:00, stop_id: center
+		// so we just match the 1st & 3rd stopover/stop_time
+		stopovers: [stopoverA1, stopoverA5],
+	}
+
+	const actualTrip = await matchTrip(tripA)
+	strictEqual(actualTrip[MATCHED], true, 'MATCHED should be true')
+
+	await redis.flushdb()
+	console.info('matchTrip() seems to be working ✔︎')
+}
+
 ;(async () => {
 	await redis.flushdb()
 
 	await testMatchStop()
 	await testMatchArrDep()
+	await testMatchTrip()
 	// todo
 
 	redis.quit()
