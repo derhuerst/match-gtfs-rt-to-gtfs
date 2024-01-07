@@ -7,9 +7,10 @@ cd "$(dirname $0)"
 
 set -x
 
-wget --compression auto \
-	-r --no-parent --no-directories -R .csv.gz \
-	-P gtfs -N 'https://vbb-gtfs.jannisr.de/2023-03-28/'
+wget \
+	-r --no-parent --no-directories -A .csv.gz \
+	-P gtfs -N 'https://vbb-gtfs.jannisr.de/2020-09-04/'
+gunzip -d -f gtfs/*.csv.gz
 
 env | grep '^PG' || true
 
