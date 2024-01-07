@@ -11,6 +11,7 @@ const createMatch = require('..')
 const gtfsRtInfo = require('./gtfs-rt-info')
 const gtfsInfo = require('./gtfs-info')
 const redis = require('../lib/redis')
+const db = require('../lib/db')
 
 const MATCHED = Symbol.for('match-gtfs-rt-to-gtfs:matched')
 
@@ -116,7 +117,7 @@ const testMatchArrDep = async () => {
 			name: 'Babbage', // todo: what about route_long_name "Charles Babbage Tram Line"?
 			mode: 'train',
 			operator: {
-				// Currently, lib/prepare-stable-ids/routes slugg(name) as the `id` 🙄
+				// Currently, lib/prepare-stable-ids/routes uses slugg(name) as the `id` 🙄
 				// id: 'FTA',
 				// name: 'Full Transit Agency',
 				id: 'full-transit-agency',
@@ -154,6 +155,7 @@ const testMatchArrDep = async () => {
 			fahrtNrs: {gtfs: 'Babbage'}, // todo: get rid of this field or make it correct
 		},
 
+		// todo: use gtfsStopSequence instead? (see other todos)
 		stopoverIndex: 3,
 		stop: {
 			..._fullyMatchingStopover.stop,
@@ -308,11 +310,13 @@ const testMatchTrip = async () => {
 	strictEqual(actualTrip[MATCHED], true, 'MATCHED should be true')
 
 	strictEqual(
+		// todo: use gtfsStopSequence instead? (see other todos)
 		actualTrip.stopovers[0].stopoverIndex,
 		1,
 		'stopovers[0].stopoverIndex should match GTFS stop_sequence',
 	)
 	strictEqual(
+		// todo: use gtfsStopSequence instead? (see other todos)
 		actualTrip.stopovers[actualTrip.stopovers.length - 1].stopoverIndex,
 		5,
 		'last(stopovers).stopoverIndex should match GTFS stop_sequence',
@@ -331,4 +335,5 @@ const testMatchTrip = async () => {
 	// todo
 
 	redis.quit()
+	await db.end()
 })()

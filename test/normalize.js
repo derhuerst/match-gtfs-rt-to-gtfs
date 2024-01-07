@@ -11,6 +11,7 @@ const normalize = (name) => {
 
 strictEqual(normalize('Foo Str.'), 'foo-str')
 strictEqual(normalize('Foo Str'), 'foo-str')
+strictEqual(normalize('Foo   Str'), 'foo-str')
 strictEqual(normalize('Foo ^Str'), 'foo-str')
 
 module.exports = {
