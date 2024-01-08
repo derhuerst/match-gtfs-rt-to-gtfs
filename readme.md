@@ -79,37 +79,14 @@ set -o pipefail
 
 ### matching data
 
-`match-gtfs-rt-to-gtf` does its job using fuzzy matching: As an example, it **identifies two departure data points from GTFS-RT & GTFS – at the same time, at the same stop/station and with the same route/line name – as equivalent**. For that to work, we need to tell it how to "normalize" stop/station & route/line names. As an example, we're going to do this for [VBB](https://github.com/public-transport/hafas-client/tree/5/p/vbb):
-
-```js
-const tokenize = require('tokenize-vbb-station-name')
-const slugg = require('slugg')
-
-const normalizeStopName = (name) => {
-	return tokenize(name, {meta: 'remove'}).join('-')
-}
-const normalizeLineName = (name) => {
-	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
-}
-
-// how to handle data from HAFAS/GTFS-RT:
-const gtfsRtInfo = {
-	endpointName: 'vbb-hafas',
-	normalizeStopName,
-	normalizeLineName,
-}
-// how to handle data from GTFS:
-const gtfsInfo = {
-	endpointName: 'vbb-gtfs',
-	normalizeStopName,
-	normalizeLineName,
-}
-```
+`match-gtfs-rt-to-gtf` does its job using fuzzy matching: As an example, it **identifies two departure data points from GTFS-RT & GTFS – at the same time, at the same stop/station and with the same route/line name – as equivalent**.
 
 Now, let's match a departure against GTFS:
 
 ```js
 const createMatch = require('match-gtfs-rt-to-gtfs')
+const gtfsRtInfo = require('./gtfs-rt-info.js') // see above
+const gtfsInfo = require('./gtfs-info.js') // see above
 
 const gtfsRtDep = {
 	tripId: '1|12308|1|86|7112020',
