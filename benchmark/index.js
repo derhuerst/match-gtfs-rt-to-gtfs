@@ -1,5 +1,6 @@
 'use strict'
 
+const {performance} = require('node:perf_hooks')
 const {pipeline} = require('stream')
 const {writable: parallelWritable} = require('parallel-stream')
 const {cpus: osCpus} = require('os')
@@ -18,10 +19,10 @@ const matchedTimes = []
 const unmatchedTimes = []
 
 const processTrip = (trip, _, cb) => {
-	const t0 = Date.now()
+	const t0 = performance.now()
 	matchTrip(trip)
 	.then((trip) => {
-		const t = Date.now() - t0
+		const t = performance.now() - t0
 		times.push(t)
 		const isMatched = !!(trip.ids && trip.ids.gtfs)
 		;(isMatched ? matchedTimes : unmatchedTimes).push(t)
@@ -39,7 +40,7 @@ pipeline(
 		objectMode: true,
 		concurrency: process.env.MATCH_CONCURRENCY
 			? parseInt(process.env.MATCH_CONCURRENCY)
-			: osCpus().length,
+			: osCpus().length + 2,
 	}),
 	(err) => {
 		if (err) {
