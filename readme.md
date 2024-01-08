@@ -45,28 +45,45 @@ const normalizeLineName = (name) => {
 	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
 }
 
-module.exports = {normalizeStopName, normalizeLineName}
+module.exports = {
+	normalizeStopName,
+	normalizeLineName,
+	// With VBB vehicles, the headsign is almost always the last stop.
+	normalizeTripHeadsign: normalizeStopName,
+}
 ```
 
 We're going to create two files that specify how to handle the GTFS-RT & GTFS (Static) data, respectively:
 
 ```js
 // gtfs-rt-info.js
-const {normalizeStopName, normalizeLineName} = require('./normalize.js')
+const {
+	normalizeStopName,
+	normalizeLineName,
+	normalizeTripHeadsign,
+} = require('./normalize.js')
+
 module.exports = {
 	endpointName: 'vbb-hafas',
 	normalizeStopName,
 	normalizeLineName,
+	normalizeTripHeadsign,
 }
 ```
 
 ```js
 // gtfs-info.js
-const {normalizeStopName, normalizeLineName} = require('./normalize.js')
+const {
+	normalizeStopName,
+	normalizeLineName,
+	normalizeTripHeadsign,
+} = require('./normalize.js')
+
 module.exports = {
 	endpointName: 'vbb-gtfs',
 	normalizeStopName,
 	normalizeLineName,
+	normalizeTripHeadsign,
 }
 ```
 
@@ -225,6 +242,7 @@ The size of this additional index depends on how many stable IDs your logic gene
 	endpointName: string,
 	normalizeStopName: (name: string, stop: FptfStop) => string,
 	normalizeLineName(name: string, line: FptfLine) => string,
+	normalizeTripHeadsign(headsign: string) => string,
 }
 ```
 

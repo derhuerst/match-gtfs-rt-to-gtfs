@@ -1,0 +1,11 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding,platform_code,zone_id,level_id
+de:11000:900058101::8,,S Südkreuz Bhf (Berlin),Bushalt Hildegard-Knef-Platz Position 1,52.476589000000,13.364133000000,0,,0,,5555 S Südkreuz Bhf (Berlin),9
+de:11000:900054104::2,,S Schöneberg (Berlin),Bushalt Dominicusstraße vor Ebersstraße,52.480061000000,13.352640000000,0,,0,,5555 S Schöneberg (Berlin),9
+de:11000:900054109::5,,Richard-von-Weizsäcker-Platz (Berlin),Ersatzhalt Hauptstraße vor ggü. Akazienstraße,52.485840000000,13.355920000000,0,,0,,5555 Richard-von-Weizsäcker-Platz (Berlin),4
+de:11000:900057103::3,,S+U Yorckstr. (Berlin),Ersatzhalt Yorckstrasse hinter Katzlerstraße,52.492830000000,13.369800000000,0,,0,,5555 S+U Yorckstr. (Berlin),4
+de:11000:900012101::1,,S Anhalter Bahnhof (Berlin),Bushalt Schöneberger Straße vor Stresemannstraße,52.504341000000,13.382057000000,0,,0,,5555 S Anhalter Bahnhof (Berlin),9
+de:11000:900100022::1,,S Potsdamer Platz Bhf/Voßstr. (Berlin),Bushalt Ebertstraße ht. Potsdamer Platz Pos. 4,52.510168000000,13.376763000000,0,,0,,5555 S Potsdamer Platz Bhf/Voßstr. (Berlin),4
+de:11000:900100301::1,,"Berlin, Hannah-Arendt-Str.",Ersatzhalt H.-Arendt-Str. nach C.-Berliner-Str.,52.513448000000,13.379453000000,0,,0,,"5555 Berlin, Hannah-Arendt-Str.",4
+de:11000:900100001::6,,S+U Friedrichstr. Bhf (Berlin),Bushalt Friedrichstraße ht. Georgenstraße,52.520531000000,13.388330000000,0,,0,,5555 S+U Friedrichstr. Bhf (Berlin),4
+de:11000:900058108::1,,S+U Yorckstr. (Berlin),Bushalt Yorckstraße ht. Bautzener Straße,52.492438000000,13.371659000000,0,,0,,5555 S+U Yorckstr. (Berlin),4
+de:11000:900057101::1,,S+U Yorckstr. (Großgörschenstr.) (Berlin),Bushalt Yorckstraße vor Bülowstraße,52.493458000000,13.367475000000,0,,0,,5555 S+U Yorckstr. (Großgörschenstr.) (Berlin),4

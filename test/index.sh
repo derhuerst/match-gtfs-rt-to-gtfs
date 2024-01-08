@@ -23,3 +23,5 @@ gtfs-to-sql --trips-without-shape-id -d -- \
 ../build-index.js gtfs-rt-info.js gtfs-info.js | psql -b
 
 node match.js
+
+./headsign-matching/index.sh

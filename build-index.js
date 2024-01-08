@@ -33,6 +33,7 @@ const {Client} = require('pg')
 const QueryStream = require('pg-query-stream')
 const stops = require('./lib/prepare-stable-ids/stops')
 const routes = require('./lib/prepare-stable-ids/routes')
+const tripHeadsigns = require('./lib/prepare-stable-ids/trip-headsigns')
 
 const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(require.resolve('./lib/arrivals_departures_with_stable_ids.sql'))
 const FIND_ARR_DEP = readFileSync(require.resolve('./lib/find_arr_dep.sql'))
@@ -83,6 +84,8 @@ BEGIN;
 	await convert(stops)
 	console.error('routes')
 	await convert(routes)
+	console.error('trip headsigns')
+	await convert(tripHeadsigns)
 
 	process.stdout.write(`
 CREATE INDEX ON trips (trip_id);
