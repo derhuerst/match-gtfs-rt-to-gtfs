@@ -1,10 +1,8 @@
-'use strict'
-
-const {
+import {
 	normalizeStopName,
 	normalizeLineName,
 	normalizeTripHeadsign,
-} = require('./normalize')
+} from './normalize.js'
 
 const gtfsInfo = {
 	endpointName: 'gtfs',
@@ -13,4 +11,4 @@ const gtfsInfo = {
 	normalizeTripHeadsign,
 }
 
-module.exports = gtfsInfo
+export default gtfsInfo

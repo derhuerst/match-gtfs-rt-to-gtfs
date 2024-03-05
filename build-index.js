@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-'use strict'
 
-const mri = require('mri')
+// todo: use import assertions once they're supported by Node.js & ESLint
+// https://github.com/tc39/proposal-import-assertions
+import {createRequire} from 'module';
+const require = createRequire(import.meta.url);
+
+import mri from 'mri'
 const pkg = require('./package.json')
 
 const argv = mri(process.argv.slice(2), {
@@ -26,24 +30,24 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
-const {readFileSync} = require('fs')
-const {resolve: pathResolve} = require('path')
-const {types: {isModuleNamespaceObject}} = require('util')
-const {Client} = require('pg')
-const QueryStream = require('pg-query-stream')
-const stops = require('./lib/prepare-stable-ids/stops')
-const routes = require('./lib/prepare-stable-ids/routes')
-const tripHeadsigns = require('./lib/prepare-stable-ids/trip-headsigns')
+import {readFileSync} from 'node:fs'
+import {resolve as pathResolve} from 'node:path'
+import {types as _utilTypes} from 'node:util'
+const {isModuleNamespaceObject} = _utilTypes
+import _pg from 'pg'
+const {Client} = _pg
+import QueryStream from 'pg-query-stream'
+import * as stops from './lib/prepare-stable-ids/stops.js'
+import * as routes from './lib/prepare-stable-ids/routes.js'
+import * as tripHeadsigns from './lib/prepare-stable-ids/trip-headsigns.js'
 
-const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(require.resolve('./lib/arrivals_departures_with_stable_ids.sql'))
-const FIND_ARR_DEP = readFileSync(require.resolve('./lib/find_arr_dep.sql'))
+const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(new URL('./lib/arrivals_departures_with_stable_ids.sql', import.meta.url))
+const FIND_ARR_DEP = readFileSync(new URL('./lib/find_arr_dep.sql', import.meta.url))
 
 const showError = (err) => {
 	console.error(err)
 	process.exit(1)
 }
-
-;(async () => {
 
 if (!argv._[0]) showError('missing/invalid gtfs-rt-info argument')
 let gtfsRtInfo = await import(pathResolve(process.cwd(), argv._[0]))
@@ -100,5 +104,3 @@ COMMIT;
 `)
 
 	await db.end()
-})()
-.catch(showError)
