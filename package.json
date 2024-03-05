@@ -15,7 +15,7 @@
 		"example"
 	],
 	"match-gtfs-rt-to-gtfs": {
-		"dataVersion": 2
+		"dataVersion": 3
 	},
 	"keywords": [
 		"gtfs-rt",
@@ -27,14 +27,17 @@
 	],
 	"author": "Jannis R <mail@jannisr.de>",
 	"homepage": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs",
-	"repository": "derhuerst/match-gtfs-rt-to-gtfs",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/derhuerst/match-gtfs-rt-to-gtfs.git"
+	},
 	"bugs": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues",
 	"license": "ISC",
 	"engines": {
 		"node": ">=20"
 	},
 	"dependencies": {
-		"@derhuerst/stable-public-transport-ids": "^2.1.0",
+		"@derhuerst/stable-public-transport-ids": "^3.0.0-alpha.1",
 		"csv-stringify": "^6.0.2",
 		"debug": "^4.2.0",
 		"find-hafas-data-in-another-hafas": "^4.4.0",
