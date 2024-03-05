@@ -1,7 +1,9 @@
 {
+	"todo": "remove once done refactoring",
+	"private": true,
 	"name": "match-gtfs-rt-to-gtfs",
 	"description": "Match GTFS Realtime data with GTFS Static data, even if they don't share an ID.",
-	"version": "6.5.2",
+	"version": "7.0.0",
 	"type": "module",
 	"main": "index.js",
 	"bin": {
@@ -37,7 +39,7 @@
 		"node": ">=20"
 	},
 	"dependencies": {
-		"@derhuerst/stable-public-transport-ids": "^3.0.0-alpha.1",
+		"@derhuerst/stable-public-transport-ids": "^2.1.0",
 		"csv-stringify": "^6.0.2",
 		"debug": "^4.2.0",
 		"find-hafas-data-in-another-hafas": "^4.4.0",
