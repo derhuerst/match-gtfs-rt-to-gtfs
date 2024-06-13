@@ -64,6 +64,7 @@ const {
 } = require('./normalize.js')
 
 module.exports = {
+	idNamespace: 'vbb',
 	endpointName: 'vbb-hafas',
 	normalizeStopName,
 	normalizeLineName,
@@ -80,6 +81,7 @@ const {
 } = require('./normalize.js')
 
 module.exports = {
+	idNamespace: 'vbb',
 	endpointName: 'vbb-gtfs',
 	normalizeStopName,
 	normalizeLineName,
@@ -239,6 +241,7 @@ The size of this additional index depends on how many stable IDs your logic gene
 
 ```ts
 {
+	idNamespace: string,
 	endpointName: string,
 	normalizeStopName: (name: string, stop: FptfStop) => string,
 	normalizeLineName(name: string, line: FptfLine) => string,

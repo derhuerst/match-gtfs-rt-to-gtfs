@@ -6,6 +6,7 @@ const {
 } = require('./util')
 
 const gtfsInfo = {
+	idNamespace: 'hvv',
 	endpointName: 'hvv',
 	normalizeStopName,
 	normalizeLineName,

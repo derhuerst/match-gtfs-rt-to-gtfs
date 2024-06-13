@@ -7,6 +7,7 @@ const {
 } = require('./normalize')
 
 const gtfsInfo = {
+	idNamespace: 'tEst',
 	endpointName: 'gtfs',
 	normalizeStopName,
 	normalizeLineName,
