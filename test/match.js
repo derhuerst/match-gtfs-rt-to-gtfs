@@ -279,6 +279,67 @@ const testMatchArrDep = async () => {
 		},
 	}, 'fuzzy-matched arrival: matched should be equal')
 	await redis.flushdb()
+	
+	// stop/station mismatch
+	// todo: Test with a trip that actually visits a sub-stop! As of sample-gtfs-feed@0.10, all trips stop at `airport`.
+	{
+		const stationAsStop = {
+			...fullyMatchingArr,
+			tripId: 'b-outbound-on-working-days',
+			// Some data sources know about the station's topology including its sub-stops, while others don't.
+			// This is how a data source might refer to `airport` as a stop (without parent), while it is a station with sub-stops in sample-gtfs-feed.
+			stop: {
+				type: 'airport',
+				id: 'airport',
+				name: 'some different name',
+				location: {type: 'location', latitude: 11, longitude: 12}, // different coordinates
+				station: null,
+			},
+			when: '2019-05-29T18:30:00+02:00',
+			plannedWhen: '2019-05-29T18:30:00+02:00',
+		}
+		const s5 = await matchArrival(stationAsStop)
+		strictEqual(s5[MATCHED], true, 'station/stop mismatch: MATCHED should be true')
+		strictEqual(s5.stopoverIndex, 15, 'station/stop mismatch: .stopoverIndex should match GTFS')
+		await redis.flushdb()
+	}
+
+	{ // two departures, with different route_shortname/line.name only -> matching by route_stable_id
+		// sample-gtfs-feed@0.10 contains *two* trips stopping at `center` between 2019-05-29T15:35+02:00 and 2019-05-29T15:36+02:00:
+		// > ```
+		// > trip_id,arrival_time,departure_time,stop_id,stop_sequence,timepoint,pickup_type,drop_off_type
+		// > a-downtown-all-day,15:35:00,15:36:00,center,5,,,
+		// > c-downtown-all-day,15:33:00,15:35:00,center,1,,,
+		// > ```
+		const byRouteStableId = {
+			tripId: 'some non-matching trip ID',
+			// directionId: '0',
+			line: {
+				// Currently, lib/prepare-stable-ids/routes uses slugg(name) as the `id` 🙄
+				// id: 'ada',
+				// name: 'some non-matching LiNe',
+				id: 'some non-matching line ID',
+				name: 'Ada',
+				mode: 'bus',
+				// no operator
+			},
+			stop: {
+				type: 'stop',
+				id: 'center',
+				name: 'some non-matching sToP',
+				location: {type: 'location', latitude: 11, longitude: 12},
+				// no parent station
+			},
+			when: '2019-05-29T15:36:20+02:00',
+			plannedWhen: '2019-05-29T15:35:30+02:00',
+			delay: 50,
+			platform: null, plannedPlatform: null,
+		}
+		const s6 = await matchArrival(byRouteStableId)
+		strictEqual(s6[MATCHED], true, 'station/stop mismatch: MATCHED should be true')
+		strictEqual(s6.tripIds.gtfs, 'a-downtown-all-day', 'station/stop mismatch: .tripId should match GTFS')
+		await redis.flushdb()
+	}
 
 	// todo: ambiguous: two matches with equal stable ID specificity & no direction/headsign
 	// todo: test matchDeparture()
