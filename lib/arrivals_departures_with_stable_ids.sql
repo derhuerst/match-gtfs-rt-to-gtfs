@@ -2,6 +2,7 @@ CREATE VIEW arrivals_departures_with_stable_ids AS
 SELECT
 	trips.route_id,
 	routes_stable.stable_id AS route_stable_id,
+	routes_stable.specificity AS route_stable_id_specificity,
 	routes.route_short_name,
 	routes.route_type,
 	stop_times.trip_id,

@@ -214,17 +214,43 @@ await findShape(someTripId)
 
 ## How it works
 
-`gtfs-via-postgres` adds a [view](https://www.postgresql.org/docs/12/sql-createview.html) `arrivals_departures`, which contains every arrival/departure of every trip in the GTFS static dataset. This repo adds another view `arrivals_departures_with_stable_ids`, which combines the data with the "stable IDs" stored in separate tables. It is then used for the matching process, which works essentially like this:
+`gtfs-via-postgres` adds a [view](https://www.postgresql.org/docs/12/sql-createview.html) `arrivals_departures`, which contains every arrival/departure of every trip in the GTFS static dataset. This repo adds another view `arrivals_departures_with_stable_ids`, which combines the data with the "stable IDs" stored in separate tables. It is then used for the matching process, which works like this conceptually:
 
 ```sql
+WITH
+	query_stop_station_stable_ids AS (
+		SELECT *
+		FROM unnest(
+			ARRAY['stop_stable_id', 'stop_stable_id'],
+			ARRAY['stop-id1', 'stop-id2'],
+			ARRAY[20, 30]
+		)
+		AS t(kind, stable_id, specificity)
+	),
+	query_route_stable_ids AS (
+		SELECT *
+		FROM unnest(
+			ARRAY['route-id1', 'route-id2'],
+			ARRAY[21, 33]
+		)
+		AS t(stable_id, specificity)
+	)
 SELECT *
 FROM arrivals_departures_with_stable_ids
-WHERE (
-	stop_stable_ids && ARRAY['stop-id1', 'stop-id2']
-	OR station_stable_ids && ARRAY['station-id1', 'station-id2']
+JOIN query_route_stable_ids route_stable ON (
+	ad.route_stable_id = route_stable.stable_id
+	AND ad.route_stable_id_specificity = route_stable.specificity
 )
-AND route_stable_ids && ARRAY['route-id1', 'route-id2']
-AND t_departure > '2020-10-16T22:20:48+02:00'
+JOIN query_stop_or_station_stable_ids stop_stable ON (
+		stop_stable.kind = 'stop_stable_id'
+		AND ad.stop_stable_id = stop_stable.stable_id
+		AND ad.stop_stable_id_specificity = stop_stable.specificity
+	) OR (
+		stop_stable.kind = 'station_stable_id'
+		AND ad.station_stable_id = stop_stable.stable_id
+		AND ad.station_stable_id_specificity = stop_stable.specificity
+	)
+WHERE t_departure > '2020-10-16T22:20:48+02:00'
 AND t_departure < '2020-10-16T22:22:48+02:00'
 ```
 
