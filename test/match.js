@@ -280,6 +280,7 @@ const testMatchArrDep = async () => {
 	}, 'fuzzy-matched arrival: matched should be equal')
 	await redis.flushdb()
 
+	// todo: ambiguous: two matches with equal stable ID specificity & no direction/headsign
 	// todo: test matchDeparture()
 	console.info('matchArrival() seems to be working ✔︎')
 }
