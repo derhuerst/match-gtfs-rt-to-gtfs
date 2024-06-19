@@ -55,7 +55,7 @@
 		"gtfs-via-postgres": "^4.6.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
-		"sample-gtfs-feed": "^0.10.3",
+		"sample-gtfs-feed": "^0.12.2",
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.0"
 	},

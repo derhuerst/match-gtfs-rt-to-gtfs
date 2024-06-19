@@ -19,3 +19,4 @@ export PGDATABASE=test_headsign_matching
 ../../build-index.js ../gtfs-rt-info.js ../gtfs-info.js | psql -b
 
 node test-find-departure.js
+node test-find-trip.js
