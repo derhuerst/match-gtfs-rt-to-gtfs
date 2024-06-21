@@ -89,6 +89,8 @@ module.exports = {
 }
 ```
 
+*Note:* To keep things easy, we're using the same normalization functions here. In practice, if your two data sources use different stop/line/headsign notations, you will need to use data-source-specific implementations.
+
 Now, we're going to use `match-gtfs-rt-to-gtfs/build-index.js` to import additional data into the database that is needed for matching:
 
 ```bash

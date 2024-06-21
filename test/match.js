@@ -87,8 +87,8 @@ const testMatchStop = async () => {
 	// - etc.
 	// Matching is also possible neither by ID-based stable ID nor by station-ID-based stable ID.
 	// todo: change @derhuerst/stable-public-transport-ids to deal with this properly
-	ok(!(MATCHED in s3), 'matched via ID: MATCHED field should not exist')
-	// strictEqual(s3[MATCHED], true, 'matched via ID: MATCHED should be true')
+	ok(!(MATCHED in s3), 'with different ID: MATCHED field should not exist')
+	// strictEqual(s3[MATCHED], true, 'with different ID: MATCHED should be true')
 	// deepStrictEqual(s3, {
 	// 	...matched,
 	// 	ids: {
