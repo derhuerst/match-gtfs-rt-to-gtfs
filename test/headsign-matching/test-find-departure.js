@@ -1,12 +1,10 @@
-'use strict'
-
-const {strictEqual} = require('node:assert')
-const createMatch = require('../..')
-const gtfsRtInfo = require('../gtfs-rt-info')
-const gtfsInfo = require('../gtfs-info')
-const {MATCHED} = require('../../lib/matched')
-const redis = require('../../lib/redis')
-const db = require('../../lib/db')
+import {strictEqual} from 'node:assert'
+import {createMatch} from '../../index.js'
+import gtfsRtInfo from '../gtfs-rt-info.js'
+import gtfsInfo from '../gtfs-info.js'
+import {MATCHED} from '../../lib/matched.js'
+import {redis} from '../../lib/redis.js'
+import {db} from '../../lib/db.js'
 
 const {
 	matchDeparture,
@@ -47,7 +45,7 @@ const twoTripsSameTimeSameStopSameLine = async () => {
 	strictEqual(res0[MATCHED], true, 'MATCHED should be true')
 }
 
-;(async () => {
+{
 	await redis.flushdb()
 
 	await twoTripsSameTimeSameStopSameLine()
@@ -55,5 +53,4 @@ const twoTripsSameTimeSameStopSameLine = async () => {
 	await redis.flushdb()
 	redis.quit()
 	await db.end()
-})()
-
+}

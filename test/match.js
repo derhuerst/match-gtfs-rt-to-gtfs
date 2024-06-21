@@ -1,16 +1,14 @@
-'use strict'
-
-const {
+import {
 	ok,
 	strictEqual,
 	deepStrictEqual,
-} = require('assert')
-const pick = require('lodash/pick')
-const createMatch = require('..')
-const gtfsRtInfo = require('./gtfs-rt-info')
-const gtfsInfo = require('./gtfs-info')
-const redis = require('../lib/redis')
-const db = require('../lib/db')
+} from 'node:assert'
+import pick from 'lodash/pick.js'
+import {createMatch} from '../index.js'
+import gtfsRtInfo from './gtfs-rt-info.js'
+import gtfsInfo from './gtfs-info.js'
+import {redis} from '../lib/redis.js'
+import {db} from '../lib/db.js'
 
 const MATCHED = Symbol.for('match-gtfs-rt-to-gtfs:matched')
 
@@ -422,7 +420,7 @@ const testMatchTrip = async () => {
 	console.info('matchTrip() seems to be working ✔︎')
 }
 
-;(async () => {
+{
 	await redis.flushdb()
 
 	await testMatchStop()
@@ -432,4 +430,4 @@ const testMatchTrip = async () => {
 
 	redis.quit()
 	await db.end()
-})()
+}

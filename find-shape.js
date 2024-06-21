@@ -1,6 +1,4 @@
-'use strict'
-
-const db = require('./lib/db')
+import {db} from './lib/db.js'
 
 const findShape = async (tripId) => {
 	// todo: this query takes ~2s, make it faster
@@ -19,4 +17,6 @@ const findShape = async (tripId) => {
 	return m ? JSON.parse(m.shape) : null
 }
 
-module.exports = findShape
+export {
+	findShape,
+}

@@ -38,18 +38,18 @@ To some extent, `match-gtfs-rt-to-gtf` fuzzily matches stop/station & route/line
 
 ```js
 // normalize.js
-const normalizeStopName = require('normalize-vbb-station-name-for-search')
-const slugg = require('slugg')
+import normalizeStopName from 'normalize-vbb-station-name-for-search'
+import slugg from 'slugg'
 
 const normalizeLineName = (name) => {
 	return slugg(name.replace(/([a-zA-Z]+)\s+(\d+)/g, '$1$2'))
 }
 
-module.exports = {
+export {
 	normalizeStopName,
 	normalizeLineName,
 	// With VBB vehicles, the headsign is almost always the last stop.
-	normalizeTripHeadsign: normalizeStopName,
+	normalizeStopName as normalizeTripHeadsign,
 }
 ```
 
@@ -57,15 +57,18 @@ We're going to create two files that specify how to handle the GTFS-RT & GTFS (S
 
 ```js
 // gtfs-rt-info.js
-const {
+import {
 	normalizeStopName,
 	normalizeLineName,
 	normalizeTripHeadsign,
-} = require('./normalize.js')
+} from './normalize.js'
 
-module.exports = {
-	idNamespace: 'vbb',
-	endpointName: 'vbb-hafas',
+const idNamespace = 'vbb'
+const endpointName = 'vbb-hafas'
+
+export {
+	idNamespace,
+	endpointName,
 	normalizeStopName,
 	normalizeLineName,
 	normalizeTripHeadsign,
@@ -74,15 +77,18 @@ module.exports = {
 
 ```js
 // gtfs-info.js
-const {
+import {
 	normalizeStopName,
 	normalizeLineName,
 	normalizeTripHeadsign,
-} = require('./normalize.js')
+} from './normalize.js'
 
-module.exports = {
-	idNamespace: 'vbb',
-	endpointName: 'vbb-gtfs',
+const idNamespace = 'vbb'
+const endpointName = 'vbb-gtfs'
+
+export {
+	idNamespace,
+	endpointName,
 	normalizeStopName,
 	normalizeLineName,
 	normalizeTripHeadsign,
@@ -105,9 +111,9 @@ set -o pipefail
 Now, let's match a departure against GTFS:
 
 ```js
-const createMatch = require('match-gtfs-rt-to-gtfs')
-const gtfsRtInfo = require('./gtfs-rt-info.js') // see above
-const gtfsInfo = require('./gtfs-info.js') // see above
+import {createMatch} from 'match-gtfs-rt-to-gtfs'
+import gtfsRtInfo from './gtfs-rt-info.js' // see above
+import gtfsInfo from './gtfs-info.js' // see above
 
 const gtfsRtDep = {
 	tripId: '1|12308|1|86|7112020',
@@ -194,7 +200,7 @@ console.log(await matchDeparture(gtfsRtDep))
 ### finding the shape of a trip
 
 ```js
-const findShape = require('match-gtfs-rt-to-gtfs/find-shape')
+import {findShape} from 'match-gtfs-rt-to-gtfs/find-shape.js'
 
 const someTripId = '24582338' // some U3 trip from the HVV dataset
 await findShape(someTripId)

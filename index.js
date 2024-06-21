@@ -1,15 +1,13 @@
-'use strict'
-
-const createMatchStop = require('./lib/match-stop')
-const {
+import {createMatchStop} from './lib/match-stop.js'
+import {
 	createMatchArrival,
 	createMatchDeparture,
-} = require('./lib/match-arrival-departure')
-const createMatchTrip = require('./lib/match-trip')
-const createMatchMovement = require('./lib/match-movement')
-const gtfsDataImportedAt = require('./lib/gtfs-data-imported-at')
-const redis = require('./lib/redis')
-const db = require('./lib/db')
+} from './lib/match-arrival-departure.js'
+import {createMatchTrip} from './lib/match-trip.js'
+import {createMatchMovement} from './lib/match-movement.js'
+import {queryGtfsDataImportedAt as gtfsDataImportedAt} from './lib/gtfs-data-imported-at.js'
+import {redis} from './lib/redis.js'
+import {db} from './lib/db.js'
 
 const close = async () => {
 	await redis.quit()
@@ -31,12 +29,12 @@ const createMatch = (gtfsRtInfo, gtfsInfo) => {
 	}
 }
 
-Object.assign(createMatch, {
+export {
+	createMatch,
 	createMatchStop,
 	createMatchArrival,
 	createMatchDeparture,
 	createMatchTrip,
 	createMatchMovement,
 	close,
-})
-module.exports = createMatch
+}

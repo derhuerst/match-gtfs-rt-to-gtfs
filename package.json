@@ -2,6 +2,7 @@
 	"name": "match-gtfs-rt-to-gtfs",
 	"description": "Match GTFS Realtime data with GTFS Static data, even if they don't share an ID.",
 	"version": "6.5.2",
+	"type": "module",
 	"main": "index.js",
 	"bin": {
 		"build-gtfs-match-index": "build-index.js"
@@ -30,7 +31,7 @@
 	"bugs": "https://github.com/derhuerst/match-gtfs-rt-to-gtfs/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">=16"
+		"node": ">=20"
 	},
 	"dependencies": {
 		"@derhuerst/stable-public-transport-ids": "^2.1.0",

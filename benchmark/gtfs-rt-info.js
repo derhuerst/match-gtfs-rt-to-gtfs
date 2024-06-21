@@ -1,9 +1,7 @@
-'use strict'
-
-const {
+import {
 	normalizeStopName,
 	normalizeLineName,
-} = require('./normalize')
+} from './normalize.js'
 
 const gtfsRtInfo = {
 	idNamespace: 'bench',
@@ -12,4 +10,4 @@ const gtfsRtInfo = {
 	normalizeLineName,
 }
 
-module.exports = gtfsRtInfo
+export default gtfsRtInfo

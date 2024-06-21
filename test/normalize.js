@@ -1,6 +1,4 @@
-'use strict'
-
-const {strictEqual} = require('assert')
+import {strictEqual} from 'node:assert'
 
 const normalize = (name) => {
 	return name
@@ -20,8 +18,8 @@ const normalizeTripHeadsign = (name) => {
 	return 'headsign--' + normalize(name)
 }
 
-module.exports = {
-	normalizeStopName: normalize,
-	normalizeLineName: normalize,
+export {
+	normalize as normalizeStopName,
+	normalize as normalizeLineName,
 	normalizeTripHeadsign,
 }

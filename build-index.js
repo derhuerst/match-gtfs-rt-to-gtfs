@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-'use strict'
 
-const mri = require('mri')
+// todo: use import assertions once they're supported by Node.js & ESLint
+// https://github.com/tc39/proposal-import-assertions
+import {createRequire} from 'node:module'
+const require = createRequire(import.meta.url)
+
+import mri from 'mri'
 const pkg = require('./package.json')
 
 const argv = mri(process.argv.slice(2), {
@@ -26,14 +30,16 @@ if (argv.version || argv.v) {
 	process.exit(0)
 }
 
-const {readFileSync} = require('fs')
-const {resolve: pathResolve} = require('path')
-const {types: {isModuleNamespaceObject}} = require('util')
-const {Client} = require('pg')
-const QueryStream = require('pg-query-stream')
-const stops = require('./lib/prepare-stable-ids/stops')
-const routes = require('./lib/prepare-stable-ids/routes')
-const tripHeadsigns = require('./lib/prepare-stable-ids/trip-headsigns')
+import {readFileSync} from 'node:fs'
+import {resolve as pathResolve} from 'node:path'
+import {types as _utilTypes} from 'node:util'
+const {isModuleNamespaceObject} = _utilTypes
+import _pg from 'pg'
+const {Client} = _pg
+import QueryStream from 'pg-query-stream'
+import stops from './lib/prepare-stable-ids/stops.js'
+import routes from './lib/prepare-stable-ids/routes.js'
+import tripHeadsigns from './lib/prepare-stable-ids/trip-headsigns.js'
 
 const ARRS_DEPS_WITH_STABLE_IDS = readFileSync(require.resolve('./lib/arrivals_departures_with_stable_ids.sql'))
 const FIND_ARR_DEP = readFileSync(require.resolve('./lib/find_arr_dep.sql'))
@@ -42,8 +48,6 @@ const showError = (err) => {
 	console.error(err)
 	process.exit(1)
 }
-
-;(async () => {
 
 if (!argv._[0]) showError('missing/invalid gtfs-rt-info argument')
 let gtfsRtInfo = await import(pathResolve(process.cwd(), argv._[0]))
@@ -81,11 +85,11 @@ BEGIN;
 \n`)
 
 	console.error('stops')
-	await convert(stops)
+	await convert({...stops})
 	console.error('routes')
-	await convert(routes)
+	await convert({...routes})
 	console.error('trip headsigns')
-	await convert(tripHeadsigns)
+	await convert({...tripHeadsigns})
 
 	process.stdout.write(`
 CREATE INDEX ON trips (trip_id);
@@ -100,5 +104,3 @@ COMMIT;
 `)
 
 	await db.end()
-})()
-.catch(showError)
