@@ -52,12 +52,14 @@
 		"gtfs-via-postgres": "^4.6.0"
 	},
 	"devDependencies": {
-		"eslint": "^8.2.0",
+		"@eslint/js": "^9.5.0",
+		"eslint": "^9.5.0",
+		"globals": "^15.6.0",
 		"gtfs-via-postgres": "^4.6.0",
 		"ndjson": "^2.0.0",
 		"parallel-stream": "^1.1.2",
 		"sample-gtfs-feed": "^0.12.2",
-		"tap-min": "^2.0.0",
+		"tap-min": "^3.0.0",
 		"tape": "^5.0.0"
 	},
 	"scripts": {
