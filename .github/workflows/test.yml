@@ -51,3 +51,4 @@ jobs:
         PGUSER: postgres
         PGPASSWORD: password
         PGDATABASE: postgres
+        DEBUG: 'match-gtfs-rt-to-gtfs:*'
