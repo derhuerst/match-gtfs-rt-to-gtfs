@@ -9,7 +9,13 @@
 		"node_modules"
 	],
 	"rules": {
-		"no-unused-vars": "off",
-		"no-self-assign": "warn"
+		"no-unused-vars": [
+			"error",
+			{
+				"vars": "all",
+				"args": "none",
+				"ignoreRestSiblings": false
+			}
+		]
 	}
 }

@@ -5,8 +5,6 @@ const {
 	strictEqual,
 	deepStrictEqual,
 } = require('assert')
-const {isatty} = require('tty')
-const {inspect} = require('util')
 const pick = require('lodash/pick')
 const createMatch = require('..')
 const gtfsRtInfo = require('./gtfs-rt-info')
