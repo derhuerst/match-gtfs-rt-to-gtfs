@@ -15,7 +15,7 @@
 		"example"
 	],
 	"match-gtfs-rt-to-gtfs": {
-		"dataVersion": 2
+		"dataVersion": 3
 	},
 	"keywords": [
 		"gtfs-rt",
@@ -34,7 +34,7 @@
 		"node": ">=20"
 	},
 	"dependencies": {
-		"@derhuerst/stable-public-transport-ids": "^2.1.0",
+		"@derhuerst/stable-public-transport-ids": "^3.0.0",
 		"csv-stringify": "^6.0.2",
 		"debug": "^4.2.0",
 		"find-hafas-data-in-another-hafas": "^4.4.0",

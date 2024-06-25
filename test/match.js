@@ -74,46 +74,25 @@ const testMatchStop = async () => {
 		...fullyMatching,
 		id: differentId,
 	})
-	// For the location-based stable IDs, currently
-	// - the *station's* name is used,
-	// - and the coordinates are snapped/rounded to a grid.
-	// Because airport-1 (52.36396/13.5087) & airport-2 (52.36417/13.50878) have the same parent station and are very close, they end up with the same set of location based stable IDs:
-	// - `1:international-airport-abc:52.3640:13.5090` (specificity 30)
-	// - `1:international-airport-abc:52.3650:13.5090` (specificity 31)
-	// - etc.
-	// Matching is also possible neither by ID-based stable ID nor by station-ID-based stable ID.
-	// todo: change @derhuerst/stable-public-transport-ids to deal with this properly
-	ok(!(MATCHED in s3), 'with different ID: MATCHED field should not exist')
-	// strictEqual(s3[MATCHED], true, 'with different ID: MATCHED should be true')
-	// deepStrictEqual(s3, {
-	// 	...matched,
-	// 	ids: {
-	// 		...matched.ids,
-	// 		'gtfs-rt': differentId,
-	// 	},
-	// }, 'matched via ID: matched should be equal')
+	// Location-based stable IDs must be used for matching, because neither an ID-based stable ID nor a station-ID-based stable ID will match.
+	strictEqual(s3[MATCHED], true, 'with different ID: MATCHED should be true')
+	deepStrictEqual(s3, {
+		...matched,
+		ids: {
+			...matched.ids,
+			'gtfs-rt': differentId,
+		},
+	}, 'matched via ID: matched should be equal')
 	await redis.flushdb()
 
-	{ // different ID, different location, no station -> only same name
+	{ // different ID, different location, no station -> only same name, no match
 		const s4 = await matchStop({
 			...fullyMatching,
 			id: differentId,
 			location: differentLoc,
 			station: null,
 		})
-		// For the name-based stable IDs, currently the *station's* name is used.
-		// Because airport-1 *does have* a parent station in the imported GTFS data, whereas it *doesn't have* one here, we end up with different stable IDs.
-		// todo: this should work with @derhuerst/stable-public-transport-ids@3
 		ok(!(MATCHED in s4), 'with different ID/loc, no station: MATCHED field should not exist')
-		// strictEqual(s4[MATCHED], true, 'with different ID/loc, no station: MATCHED should be true')
-		// deepStrictEqual(s4, {
-		// 	...matched,
-		// 	ids: {
-		// 		...matched.ids,
-		// 		'gtfs-rt': differentId,
-		// 	},
-		// 	location: differentLoc,
-		// }, 'matched via ID: matched should be equal')
 		await redis.flushdb()
 	}
 

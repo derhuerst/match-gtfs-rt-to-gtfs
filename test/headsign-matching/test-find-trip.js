@@ -39,7 +39,7 @@ const trip1 = {
 				name: 'S+U Friedrichstr. Bhf (Berlin)',
 				location: {
 					type: 'location',
-					// https://github.com/derhuerst/stable-public-transport-ids/blob/2.1.0/stop.js#L16-L28
+					// https://github.com/derhuerst/stable-public-transport-ids/blob/3.0.0/stop.js#L22-L35
 					latitude: 52.520531 + .001,
 					longitude: 13.38833 + .001,
 				},
@@ -57,7 +57,7 @@ const trip1 = {
 				name: 'S+U Yorckstr. (Berlin)',
 				location: {
 					type: 'location',
-					// https://github.com/derhuerst/stable-public-transport-ids/blob/2.1.0/stop.js#L16-L28
+					// https://github.com/derhuerst/stable-public-transport-ids/blob/3.0.0/stop.js#L22-L35
 					latitude: 52.49283 + .001,
 					longitude: 13.3698 + .001,
 				},

@@ -28,7 +28,7 @@ const twoTripsSameTimeSameStopSameLine = async () => {
 			name: 'S+U Friedrichstr. Bhf (Berlin)',
 			location: {
 				type: 'location',
-				// https://github.com/derhuerst/stable-public-transport-ids/blob/2.1.0/stop.js#L16-L28
+				// https://github.com/derhuerst/stable-public-transport-ids/blob/3.0.0/stop.js#L22-L35
 				// snapped/rounded to 52.521
 				latitude: 52.520531 + .0001,
 				// snapped/rounded to 13.388
