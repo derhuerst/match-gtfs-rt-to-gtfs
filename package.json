@@ -34,7 +34,7 @@
 		"node": ">=20"
 	},
 	"dependencies": {
-		"@derhuerst/stable-public-transport-ids": "^3.0.0",
+		"@derhuerst/stable-public-transport-ids": "^3.0.0-alpha.3",
 		"csv-stringify": "^6.0.2",
 		"debug": "^4.2.0",
 		"find-hafas-data-in-another-hafas": "^4.4.0",
